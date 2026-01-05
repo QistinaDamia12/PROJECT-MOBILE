@@ -60,6 +60,7 @@
             android:background="@drawable/button_tab_selector"
             android:textColor="@color/tab_text_selector" />
 
+
         <Button
             android:id="@+id/btnHistory"
             android:layout_width="0dp"
