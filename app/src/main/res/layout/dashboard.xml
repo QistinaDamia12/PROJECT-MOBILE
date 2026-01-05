@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFA1F5">
+    android:background="@drawable/background2">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:id="@+id/btnProfile"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@android:drawable/ic_menu_myplaces"
+            android:src="@drawable/contacts_product"
             android:background="?attr/selectableItemBackgroundBorderless"
             app:tint="@color/white" />
 
@@ -33,68 +33,67 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="413dp"
-        android:layout_weight="1"
+        android:layout_height="377dp"
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/jersey_regular"
-            android:text="WELCOME TO\nUiTM FACILITY"
-            android:textAlignment="center"
-            android:textColor="#6B0B83"
-            android:textSize="70sp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/facici"/>
+
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="226dp"
         android:orientation="horizontal"
-        android:padding="12dp"> <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardBook"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_weight="1"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:background="#731972"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/add" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Book Facility"
-                android:fontFamily="@font/jersey_regular"
-                android:textSize="30dp"
-                android:textColor="@color/white" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+        android:padding="12dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBook"
             android:layout_width="0dp"
             android:layout_height="150dp"
-            android:layout_weight="1"
             android:layout_margin="8dp"
+            android:layout_weight="1"
             app:cardCornerRadius="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:background="#731972"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jersey_regular"
+                    android:text="Book Facility"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#731972"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -104,10 +103,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/jersey_regular"
                     android:text="Support"
                     android:textColor="@color/white"
-                    android:fontFamily="@font/jersey_regular"
-                    android:textSize="30dp"/>
+                    android:textSize="30dp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

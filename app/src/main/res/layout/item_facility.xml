@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
+        android:background="#731972"
         android:orientation="vertical">
 
         <ImageView
@@ -23,24 +24,29 @@
             android:id="@+id/txtFacilityName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="Dewan Kuliah 1"
-            android:textSize="18sp"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="30dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fakulti Sains Komputer"
-            android:textColor="#666666" />
+            android:textColor="@color/white"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="20dp"
+            android:text="Fakulti Sains Komputer"/>
 
         <TextView
             android:id="@+id/txtCapacity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Capacity: 40 Pax"
-            android:textColor="#2E7D32"
-            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="20dp"
             android:layout_marginTop="4dp"/>
 
         <Button
@@ -48,6 +54,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="25dp"
+            android:background="@drawable/round_button"
             android:text="Reserve Now" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
