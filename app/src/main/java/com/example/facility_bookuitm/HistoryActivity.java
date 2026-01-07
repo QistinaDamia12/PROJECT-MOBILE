@@ -5,12 +5,15 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.facility_bookuitm.adapter.ReservationAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private HistoryAdapter adapter; // You'll create this next
+    private ReservationAdapter adapter; // You'll create this next
     private List<History> historyList;
 
     @Override
@@ -34,7 +37,7 @@ public class HistoryActivity extends AppCompatActivity {
         historyList.add(new History("Futsal Court A", "12 Oct 2025", "CONFIRMED"));
         historyList.add(new History("Dewan Agung", "15 Oct 2025", "PENDING"));
 
-        adapter = new HistoryAdapter(historyList);
+        adapter = new ReservationAdapter(historyList);
         recyclerView.setAdapter(adapter);
     }
 }
