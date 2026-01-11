@@ -10,8 +10,13 @@ public class ApiUtils
         return RetrofitClient.getClient(BASE_URL).create(UserService.class);
     }
 
-    // return BookService instance
+    // return FacilityService instance
     public static FacilityService getFacilityService() {
         return RetrofitClient.getClient(BASE_URL).create(FacilityService.class);
+    }
+
+    // return FacilityService instance
+    public static ReservationService getReservationService() {
+        return RetrofitClient.getClient(BASE_URL).create(ReservationService.class);
     }
 }
