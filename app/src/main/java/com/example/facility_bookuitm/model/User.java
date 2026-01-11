@@ -1,88 +1,59 @@
 package com.example.facility_bookuitm.model;
 
-public class User {
-    // represent a record in users tables
-    private int id;
-    private String email;
-    private String username;
-    private String password;
-    private String token;
-    private String lease;
-    private String role;
-    private int is_active;
-    private String secret;
+public class User
+{
+    private String userID;
+    private String userName;
+    private String userEmail;
+    private String UserPassword;
+    private String userRole;
+    private String userPicture;
 
-    public int getId() {
-        return id;
+    public String getUserID() {
+        return userID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUserPassword() {
+        return UserPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String userPassword) {
+        UserPassword = userPassword;
     }
 
-    public String getToken() {
-        return token;
+    public String getUserRole() {
+        return userRole;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
     }
 
-    public String getLease() {
-        return lease;
+    public String getUserPicture() {
+        return userPicture;
     }
 
-    public void setLease(String lease) {
-        this.lease = lease;
+    public void setUserPicture(String userPicture) {
+        this.userPicture = userPicture;
     }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public int getIs_active() {
-        return is_active;
-    }
-
-    public void setIs_active(int is_active) {
-        this.is_active = is_active;
-    }
-
-    public String getSecret() {
-        return secret;
-    }
-
-    public void setSecret(String secret) {
-        this.secret = secret;
-    }
-
-
 }

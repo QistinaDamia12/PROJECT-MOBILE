@@ -42,23 +42,51 @@
         android:textColorHint="@color/white"
         android:fontFamily="@font/jersey_regular"
         android:background="@drawable/rounded_edittext"
-        android:hint="User ID"
+        android:hint="  User ID"
         android:inputType="text"
-
         android:textSize="25dp" />
 
     <EditText
-
+        android:id="@+id/etPassword"
         android:layout_width="359dp"
         android:layout_height="47dp"
-        android:id="@+id/etPassword"
         android:textColorHint="@color/white"
         android:textSize="25dp"
-        android:hint="Password"
+        android:hint="  Password"
         android:background="@drawable/rounded_edittext"
         android:inputType="textPassword"
         android:fontFamily="@font/jersey_regular"
         android:layout_marginTop="18dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp">
+
+        <TextView
+            android:id="@+id/tvRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Role: "
+            android:textColor="@color/white"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="25dp"
+            android:layout_centerVertical="true"/>
+
+        <Spinner
+            android:id="@+id/spRole"
+            android:layout_width="200dp"
+            android:layout_height="47dp"
+            android:layout_toEndOf="@id/tvRole"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="@color/white"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="25dp"
+            android:padding="8dp"
+            android:entries="@array/roleLogin"/>
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btnLogin"
