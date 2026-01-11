@@ -19,7 +19,7 @@ public class HistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Use your main layout with the two buttons
+        setContentView(R.layout.login_page); // Use your main layout with the two buttons
 
         // Handle the Button Highlighting
         Button btnFacilities = findViewById(R.id.btnFacilities);

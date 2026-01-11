@@ -16,7 +16,7 @@ public class FacilityList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_facility); // Load the list screen
+        setContentView(R.layout.user_reservationfacility_p1); // Load the list screen
 
         recyclerView = findViewById(R.id.recyclerView);
         if (recyclerView != null) {

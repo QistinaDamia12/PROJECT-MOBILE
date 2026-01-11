@@ -1,6 +1,5 @@
 package com.example.facility_bookuitm;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -17,7 +16,7 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dashboard);
+        setContentView(R.layout.user_dashboard);
 
         // Initialize views
         btnProfile = findViewById(R.id.btnProfile);
