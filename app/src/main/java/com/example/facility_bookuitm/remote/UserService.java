@@ -11,8 +11,5 @@ public interface UserService {
 
     @FormUrlEncoded
     @POST("user/login")
-    Call<User> login(
-            @Field("userID") String userID,
-            @Field("userPassword") String userPassword
-    );
+    Call<User> login(@Field("userID") String userID, @Field("userPassword") String userPassword);
 }
