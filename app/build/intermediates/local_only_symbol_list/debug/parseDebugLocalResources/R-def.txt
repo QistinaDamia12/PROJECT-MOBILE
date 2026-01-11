@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+array roleLogin
 color black
 color tab_text_selector
 color white
@@ -64,8 +65,10 @@ id profile
 id profilePicture
 id recyclerView
 id rvAdminFullList
+id spRole
 id timeCard
 id topBar
+id tvRole
 id txtCapacity
 id txtFacilityName
 id txtLocation
@@ -74,18 +77,18 @@ id txtSelectedTime
 id txtSuccessDetail
 id userID
 id userName
-layout activity_admin_full_list
-layout activity_main
-layout admin_profile
-layout dashboard
+layout admin_dashboard
+layout admin_list_facility
 layout history
-layout item_facility
-layout item_history
-layout main_facility
-layout profile_user
-layout reserve_confirmation
-layout reserve_successfull
-layout select_date
+layout login_page
+layout user_dashboard
+layout user_profile
+layout user_reservationfacility_p1
+layout user_reservefacility_p2
+layout user_reservefacility_p3
+layout user_reservefacility_p4
+layout user_x1
+layout user_x2
 menu options_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground

@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.facility_bookuitm.app-mergeDebugResources-34:/values-land/values-land.xml",
+            "outputFile": "com.example.facility_bookuitm.app-mergeDebugResources-36:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\8.13\\transforms\\6d224fdb884dfc1e180b240711335638\\transformed\\appcompat-1.7.1\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,125,196",
-                        "endColumns": "69,70,67",
-                        "endOffsets": "120,191,259"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\8.13\\transforms\\e674da648620b2a49a2872bc90c40308\\transformed\\material-1.13.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\damio\\.gradle\\caches\\8.13\\transforms\\3f188f316e45f051f4e1e06665993ab5\\transformed\\material-1.13.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,22,31,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -30,6 +20,16 @@
                         "endLines": "5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,24,33,38,41",
                         "endColumns": "74,73,64,66,69,71,68,68,81,89,75,67,66,77,64,66,10,10,10,10",
                         "endOffsets": "334,408,473,540,610,682,751,820,902,992,1068,1136,1203,1281,1346,1413,1585,2154,2423,2651"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\damio\\.gradle\\caches\\8.13\\transforms\\d1072c3e9cbc9a060d4f8230bedec944\\transformed\\appcompat-1.7.1\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
                     }
                 }
             ]

@@ -8,6 +8,8 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="36" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <permission
         android:name="com.example.facility_bookuitm.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -34,9 +36,6 @@
             android:name="com.example.facility_bookuitm.AdminProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.facility_bookuitm.test2"
-            android:exported="false" />
-        <activity
             android:name="com.example.facility_bookuitm.MainActivity"
             android:exported="true" >
             <intent-filter>
@@ -45,6 +44,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.gms.fitness.sdk.version"
+            android:value="21.3.0" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
