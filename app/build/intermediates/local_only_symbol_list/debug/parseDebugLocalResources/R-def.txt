@@ -57,7 +57,7 @@ id historyFacilityName
 id historyStatus
 id historyTime
 id imgFacility
-id main
+id loginPage
 id menuBar
 id previewDetails
 id previewFacilityName

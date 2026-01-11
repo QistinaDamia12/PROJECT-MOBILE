@@ -8,6 +8,15 @@ public class User
     private String UserPassword;
     private String userRole;
     private String userPicture;
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     public String getUserID() {
         return userID;

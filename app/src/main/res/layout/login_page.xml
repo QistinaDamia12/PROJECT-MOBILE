@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/loginPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -42,7 +42,7 @@
         android:textColorHint="@color/white"
         android:fontFamily="@font/jersey_regular"
         android:background="@drawable/rounded_edittext"
-        android:hint="  User ID"
+        android:hint="  User ID / Email"
         android:inputType="text"
         android:textSize="25dp" />
 
@@ -96,7 +96,8 @@
         android:fontFamily="@font/jersey_regular"
         android:text="LOGIN"
         android:background="@drawable/round_button"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:onClick=""/>
 
 
 </LinearLayout>
