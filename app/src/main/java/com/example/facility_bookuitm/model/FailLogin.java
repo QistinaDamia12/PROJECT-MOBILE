@@ -1,6 +1,7 @@
 package com.example.facility_bookuitm.model;
 
-public class FailLogin {
+public class FailLogin
+{
     // fail login
     private String status;
     private Error error;

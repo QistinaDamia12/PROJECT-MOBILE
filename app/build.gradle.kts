@@ -38,10 +38,10 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.play.services.fitness)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
     //Retrofit https://square.github.io/retrofit/ - latest vesion https://github.com/square/retrofit.
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     //Gson -> json data to java or kotlin format
