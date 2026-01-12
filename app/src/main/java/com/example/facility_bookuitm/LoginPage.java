@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -47,7 +48,10 @@ public class LoginPage  extends AppCompatActivity
         // get references to form elements
         etID = findViewById(R.id.etID);
         etPassword = findViewById(R.id.etPassword);
-        spRole = findViewById(R.id.spRole);
+
+        //role
+        RadioGroup rgRole = findViewById(R.id.rgRole);
+        int selectRole = rgRole.getCheckedRadioButtonId();
 
     }
 
@@ -56,21 +60,24 @@ public class LoginPage  extends AppCompatActivity
         // get username/email and password entered by user
         String userid = etID.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
-        Spinner role = findViewById(R.id.spRole);
+        //role
+        RadioGroup rgRole = findViewById(R.id.rgRole);
+        int selectRole = rgRole.getCheckedRadioButtonId();
+
 
 
         // validate form
-        if (validateLogin(userid, password, role)) {
-            doLogin(userid, password);
+        if (validateLogin(userid, password, selectRole)) {
+            doLogin(userid, password, selectRole);
         }
     }
 
-    private void doLogin(String userid, String password) {
+    private void doLogin(String userid, String password, int selectRole) {
 
         UserService userService = ApiUtils.getUserService();
 
         // email login
-        Call<User> call = userService.login(userid, password);
+        Call<User> call = userService.login(userid, password, role);
 
         call.enqueue(new Callback<User>() {
             @Override
@@ -117,7 +124,7 @@ public class LoginPage  extends AppCompatActivity
         });
     }
 
-    private boolean validateLogin(String userid, String password, Spinner role) {
+    private boolean validateLogin(String userid, String password, int role) {
         if (userid == null || userid.isEmpty()) {
             Toast.makeText(this, "Email is required", Toast.LENGTH_LONG).show();
             return false;
