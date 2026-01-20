@@ -23,6 +23,7 @@ drawable round_button
 drawable rounded_edittext
 drawable uitm_sample
 font jersey_regular
+id adminDashboard
 id adminFacilities
 id adminSupport
 id btnAdminProfile
@@ -68,8 +69,7 @@ id previewFacilityName
 id profile
 id profilePicture
 id rbAdmin
-id rbLecturer
-id rbStudent
+id rbUser
 id recyclerView
 id rgRole
 id rvAdminFullList

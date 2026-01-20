@@ -40,23 +40,27 @@
         android:layout_height="47dp"
         android:layout_marginTop="18dp"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:fontFamily="@font/jersey_regular"
         android:background="@drawable/rounded_edittext"
-        android:hint="  User ID / Email"
+        android:hint="  Username"
         android:inputType="text"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:paddingLeft="16dp"/>
 
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="359dp"
         android:layout_height="47dp"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:textSize="25dp"
         android:hint="  Password"
         android:background="@drawable/rounded_edittext"
         android:inputType="textPassword"
         android:fontFamily="@font/jersey_regular"
-        android:layout_marginTop="18dp"/>
+        android:layout_marginTop="18dp"
+        android:paddingLeft="16dp"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -84,19 +88,10 @@
             android:layout_centerVertical="true">
 
             <RadioButton
-                android:id="@+id/rbStudent"
+                android:id="@+id/rbUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Student"
-                android:textColor="@color/white"
-                android:fontFamily="@font/jersey_regular"
-                android:textSize="25sp"/>
-
-            <RadioButton
-                android:id="@+id/rbLecturer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lecturer"
+                android:text="Student/Lecturer"
                 android:textColor="@color/white"
                 android:fontFamily="@font/jersey_regular"
                 android:textSize="25sp"/>
@@ -108,7 +103,8 @@
                 android:text="Admin"
                 android:textColor="@color/white"
                 android:fontFamily="@font/jersey_regular"
-                android:textSize="25sp"/>
+                android:textSize="25sp"
+                android:layout_marginLeft="10dp"/>
         </RadioGroup>
 
     </RelativeLayout>

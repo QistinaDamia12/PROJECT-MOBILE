@@ -140,6 +140,10 @@
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\menu\\options_menu.xml"
     },
     {
+        "merged": "com.example.facility_bookuitm.app-debug-38:/layout_admin_dashboard.xml.flat",
+        "source": "com.example.facility_bookuitm.app-main-40:/layout/admin_dashboard.xml"
+    },
+    {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -29,6 +31,9 @@ public class loginPage extends AppCompatActivity {
     private EditText edtUsername;
     private EditText edtPassword;
 
+    RadioGroup rgRole;
+    RadioButton rbUser, rbAdmin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,11 @@ public class loginPage extends AppCompatActivity {
         // get references to form elements
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
+
+        //radiobtn
+        rgRole = findViewById(R.id.rgRole);
+        rbUser = findViewById(R.id.rbUser);
+        rbAdmin = findViewById(R.id.rbAdmin);
     }
 
     /**
@@ -90,9 +100,25 @@ public class loginPage extends AppCompatActivity {
                         SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
                         spm.storeUser(user);
 
-                        // go to user
-                        finish();
-                        startActivity(new Intent(getApplicationContext(), user_dashboard.class));
+                        //radio button page
+                        int selectedId = rgRole.getCheckedRadioButtonId();
+
+                        if (selectedId == -1) {
+                            Toast.makeText(loginPage.this, "Please select a role", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        RadioButton selectedRadioButton = findViewById(selectedId);
+                        String role = selectedRadioButton.getText().toString().trim();
+
+                        if (role.equalsIgnoreCase("Admin")) {
+                            startActivity(new Intent(loginPage.this, admin_dashboard.class));
+                            finish();
+                        } else {
+                            // User = Student/Lecturer
+                            startActivity(new Intent(loginPage.this, user_dashboard.class));
+                            finish();
+                        }
 
                     } else {
                         Toast.makeText(loginPage.this, "Login error", Toast.LENGTH_LONG).show();

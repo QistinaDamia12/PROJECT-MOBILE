@@ -20,12 +20,17 @@
             android:exported="false" />
 
         <activity
+            android:name=".admin_dashboard"
+            android:exported="false" />
+
+        <activity
             android:name=".user_dashboard"
             android:exported="false" />
 
         <activity
             android:name=".loginPage"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

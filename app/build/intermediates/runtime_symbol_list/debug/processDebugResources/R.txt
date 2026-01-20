@@ -3783,6 +3783,7 @@ int id activity_chooser_view_content 0x7f0a0046
 int id add 0x7f0a0047
 int id adjust_height 0x7f0a0048
 int id adjust_width 0x7f0a0049
+int id adminDashboard 0x7f0a0252
 int id adminFacilities 0x7f0a004a
 int id adminSupport 0x7f0a004b
 int id advance 0x7f0a004c
@@ -4132,8 +4133,7 @@ int id progress_horizontal 0x7f0a019f
 int id radio 0x7f0a01a0
 int id ratio 0x7f0a01a1
 int id rbAdmin 0x7f0a0248
-int id rbLecturer 0x7f0a0249
-int id rbStudent 0x7f0a024a
+int id rbUser 0x7f0a0253
 int id rectangles 0x7f0a01a2
 int id recyclerView 0x7f0a01a3
 int id report_drawn 0x7f0a01a4

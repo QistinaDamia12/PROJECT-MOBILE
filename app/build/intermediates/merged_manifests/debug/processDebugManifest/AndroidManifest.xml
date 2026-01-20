@@ -34,6 +34,9 @@
             android:name="com.example.facility_bookuitm.admin_add_facility"
             android:exported="false" />
         <activity
+            android:name="com.example.facility_bookuitm.admin_dashboard"
+            android:exported="false" />
+        <activity
             android:name="com.example.facility_bookuitm.user_dashboard"
             android:exported="false" />
         <activity

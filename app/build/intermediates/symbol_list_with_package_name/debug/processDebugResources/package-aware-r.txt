@@ -3784,6 +3784,7 @@ id activity_chooser_view_content
 id add
 id adjust_height
 id adjust_width
+id adminDashboard
 id adminFacilities
 id adminSupport
 id advance
@@ -4133,8 +4134,7 @@ id progress_horizontal
 id radio
 id ratio
 id rbAdmin
-id rbLecturer
-id rbStudent
+id rbUser
 id rectangles
 id recyclerView
 id report_drawn
