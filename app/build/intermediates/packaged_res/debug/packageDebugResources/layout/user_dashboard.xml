@@ -100,13 +100,14 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/contact_support" />
+                    android:src="@drawable/contact_support"
+                    android:onClick="profilebtn"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jersey_regular"
-                    android:text="History Reservation"
+                    android:text="Profile"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="30dp" />

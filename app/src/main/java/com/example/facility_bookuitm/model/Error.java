@@ -1,7 +1,6 @@
 package com.example.facility_bookuitm.model;
 
-public class Error
-{
+public class Error {
     private String code;
     private String status;
     private String message;

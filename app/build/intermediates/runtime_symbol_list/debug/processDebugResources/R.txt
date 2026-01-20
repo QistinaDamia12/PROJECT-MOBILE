@@ -3918,6 +3918,8 @@ int id east 0x7f0a00cd
 int id edge 0x7f0a00ce
 int id edit_query 0x7f0a00cf
 int id edit_text_id 0x7f0a00d0
+int id edtPassword 0x7f0a0250
+int id edtUsername 0x7f0a0251
 int id elastic 0x7f0a00d1
 int id embed 0x7f0a00d2
 int id end 0x7f0a00d3
@@ -3926,8 +3928,6 @@ int id enterAlways 0x7f0a00d5
 int id enterAlwaysCollapsed 0x7f0a00d6
 int id entireSpace 0x7f0a00d7
 int id escape 0x7f0a00d8
-int id etID 0x7f0a00d9
-int id etPassword 0x7f0a00da
 int id etPurpose 0x7f0a00db
 int id exitUntilCollapsed 0x7f0a00dc
 int id expand_activities_button 0x7f0a00dd

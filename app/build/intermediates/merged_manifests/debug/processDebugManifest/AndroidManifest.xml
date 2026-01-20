@@ -28,7 +28,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.Facility_bookuitm" >
+        android:theme="@style/Theme.Facility_bookuitm"
+        android:usesCleartextTraffic="true" >
         <activity
             android:name="com.example.facility_bookuitm.admin_add_facility"
             android:exported="false" />
@@ -36,13 +37,7 @@
             android:name="com.example.facility_bookuitm.user_dashboard"
             android:exported="false" />
         <activity
-            android:name="com.example.facility_bookuitm.AdminFullListAdapter"
-            android:exported="false" />
-        <activity
-            android:name="com.example.facility_bookuitm.AdminProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.facility_bookuitm.MainActivity"
+            android:name="com.example.facility_bookuitm.loginPage"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

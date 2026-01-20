@@ -40,6 +40,10 @@
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\faci.png"
     },
     {
+        "merged": "com.example.facility_bookuitm.app-debug-38:/layout_login_page.xml.flat",
+        "source": "com.example.facility_bookuitm.app-main-40:/layout/login_page.xml"
+    },
+    {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
@@ -50,10 +54,6 @@
     {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_round_button.xml.flat",
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\round_button.xml"
-    },
-    {
-        "merged": "com.example.facility_bookuitm.app-debug-38:/layout_user_dashboard.xml.flat",
-        "source": "com.example.facility_bookuitm.app-main-40:/layout/user_dashboard.xml"
     },
     {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",

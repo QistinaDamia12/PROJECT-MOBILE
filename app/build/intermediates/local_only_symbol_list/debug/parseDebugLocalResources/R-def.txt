@@ -49,8 +49,8 @@ id confirmImage
 id confirmLocation
 id confirmName
 id dateCard
-id etID
-id etPassword
+id edtPassword
+id edtUsername
 id etPurpose
 id facilityCapacity
 id facilityLocation

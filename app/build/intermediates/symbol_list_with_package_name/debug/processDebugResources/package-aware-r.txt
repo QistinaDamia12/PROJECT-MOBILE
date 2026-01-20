@@ -3919,6 +3919,8 @@ id east
 id edge
 id edit_query
 id edit_text_id
+id edtPassword
+id edtUsername
 id elastic
 id embed
 id end
@@ -3927,8 +3929,6 @@ id enterAlways
 id enterAlwaysCollapsed
 id entireSpace
 id escape
-id etID
-id etPassword
 id etPurpose
 id exitUntilCollapsed
 id expand_activities_button

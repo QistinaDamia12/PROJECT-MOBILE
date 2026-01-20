@@ -35,7 +35,7 @@
     </TextView>
 
     <EditText
-        android:id="@+id/etID"
+        android:id="@+id/edtUsername"
         android:layout_width="359dp"
         android:layout_height="47dp"
         android:layout_marginTop="18dp"
@@ -47,7 +47,7 @@
         android:textSize="25dp" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/edtPassword"
         android:layout_width="359dp"
         android:layout_height="47dp"
         android:textColorHint="@color/white"

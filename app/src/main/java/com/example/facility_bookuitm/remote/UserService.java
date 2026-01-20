@@ -10,6 +10,6 @@ import com.example.facility_bookuitm.model.User;
 public interface UserService {
 
     @FormUrlEncoded
-    @POST("user/login")
-    Call<User> login(@Field("userID") String userID, @Field("userPassword") String userPassword);
+    @POST("users/login")
+    Call<User> login(@Field("username") String username, @Field("password") String password);
 }
