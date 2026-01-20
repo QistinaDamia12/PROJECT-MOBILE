@@ -9,6 +9,7 @@ drawable add_faci
 drawable arrow_back
 drawable background2
 drawable background_admin
+drawable baseline_add_24
 drawable bg_login
 drawable bg_login2
 drawable button_tab_selector
@@ -43,7 +44,7 @@ id btnOpenCalendar
 id btnOpenTimePicker
 id btnProfile
 id btnRejectQuick
-id btnViewAllRequests
+id btnRequestList
 id cardBook
 id confirmCapacity
 id confirmImage
@@ -53,7 +54,10 @@ id dateCard
 id edtPassword
 id edtUsername
 id etPurpose
+id fab
+id facilityAdd
 id facilityCapacity
+id facilityList
 id facilityLocation
 id facilityType
 id historyDate
@@ -62,7 +66,6 @@ id historyStatus
 id historyTime
 id imgFacility
 id loginPage
-id main
 id menuBar
 id previewDetails
 id previewFacilityName
@@ -72,7 +75,7 @@ id rbAdmin
 id rbUser
 id recyclerView
 id rgRole
-id rvAdminFullList
+id rvBookList
 id timeCard
 id topBar
 id tvRole
@@ -85,7 +88,7 @@ id txtSuccessDetail
 id userDashboard
 id userID
 id userName
-layout activity_admin_add_facility
+layout admin_add_facility
 layout admin_dashboard
 layout admin_list_facility
 layout login_page

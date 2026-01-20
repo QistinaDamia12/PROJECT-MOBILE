@@ -3564,6 +3564,7 @@ int drawable avd_hide_password 0x7f08007b
 int drawable avd_show_password 0x7f08007c
 int drawable background2 0x7f08007d
 int drawable background_admin 0x7f08007e
+int drawable baseline_add_24 0x7f08010f
 int drawable bg_login 0x7f08007f
 int drawable bg_login2 0x7f080080
 int drawable btn_checkbox_checked_mtrl 0x7f080081
@@ -3836,7 +3837,7 @@ int id btnOpenCalendar 0x7f0a007a
 int id btnOpenTimePicker 0x7f0a007b
 int id btnProfile 0x7f0a007c
 int id btnRejectQuick 0x7f0a007d
-int id btnViewAllRequests 0x7f0a007e
+int id btnRequestList 0x7f0a0254
 int id buttonPanel 0x7f0a007f
 int id cache_measures 0x7f0a0080
 int id callMeasure 0x7f0a0081
@@ -3933,7 +3934,10 @@ int id etPurpose 0x7f0a00db
 int id exitUntilCollapsed 0x7f0a00dc
 int id expand_activities_button 0x7f0a00dd
 int id expanded_menu 0x7f0a00de
+int id fab 0x7f0a0255
+int id facilityAdd 0x7f0a0256
 int id facilityCapacity 0x7f0a024c
+int id facilityList 0x7f0a0257
 int id facilityLocation 0x7f0a024d
 int id facilityType 0x7f0a024e
 int id fade 0x7f0a00df
@@ -4005,7 +4009,6 @@ int id listMode 0x7f0a0120
 int id list_item 0x7f0a0121
 int id loginPage 0x7f0a0247
 int id m3_side_sheet 0x7f0a0122
-int id main 0x7f0a0123
 int id marquee 0x7f0a0124
 int id masked 0x7f0a0125
 int id match_constraint 0x7f0a0126
@@ -4146,7 +4149,7 @@ int id right_icon 0x7f0a01a9
 int id right_side 0x7f0a01aa
 int id rounded 0x7f0a01ab
 int id row_index_key 0x7f0a01ac
-int id rvAdminFullList 0x7f0a01ad
+int id rvBookList 0x7f0a0258
 int id save_non_transition_alpha 0x7f0a01ae
 int id save_overlay_view 0x7f0a01af
 int id sawtooth 0x7f0a01b0
@@ -4418,7 +4421,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0d0018
 int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
-int layout activity_admin_add_facility 0x7f0d0079
+int layout admin_add_facility 0x7f0d007c
 int layout admin_dashboard 0x7f0d001c
 int layout admin_list_facility 0x7f0d001d
 int layout custom_dialog 0x7f0d001e

@@ -1,5 +1,6 @@
 package com.example.facility_bookuitm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -22,4 +23,14 @@ public class admin_dashboard  extends AppCompatActivity {
         });
     }
 
+    public void facilityList(View view) {
+        finish();
+        // forward to Login Page
+        Intent intent = new Intent(this, admin_list_facility.class);
+        startActivity(intent);
+    }
+
+    public void requestList(View view) {
+
+    }
 }

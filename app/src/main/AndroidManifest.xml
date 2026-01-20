@@ -24,6 +24,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".admin_list_facility"
+            android:exported="false" />
+
+        <activity
             android:name=".user_dashboard"
             android:exported="false" />
 

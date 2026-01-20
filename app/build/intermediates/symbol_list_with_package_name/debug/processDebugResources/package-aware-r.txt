@@ -3565,6 +3565,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable background2
 drawable background_admin
+drawable baseline_add_24
 drawable bg_login
 drawable bg_login2
 drawable btn_checkbox_checked_mtrl
@@ -3837,7 +3838,7 @@ id btnOpenCalendar
 id btnOpenTimePicker
 id btnProfile
 id btnRejectQuick
-id btnViewAllRequests
+id btnRequestList
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3934,7 +3935,10 @@ id etPurpose
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
+id facilityAdd
 id facilityCapacity
+id facilityList
 id facilityLocation
 id facilityType
 id fade
@@ -4006,7 +4010,6 @@ id listMode
 id list_item
 id loginPage
 id m3_side_sheet
-id main
 id marquee
 id masked
 id match_constraint
@@ -4147,7 +4150,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
-id rvAdminFullList
+id rvBookList
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -4419,7 +4422,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_admin_add_facility
+layout admin_add_facility
 layout admin_dashboard
 layout admin_list_facility
 layout custom_dialog
