@@ -67,37 +67,63 @@
             android:id="@+id/tvRole"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Role: "
+            android:text="Role:"
             android:textColor="@color/white"
             android:fontFamily="@font/jersey_regular"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:layout_centerVertical="true"/>
 
-        <Spinner
-            android:id="@+id/spRole"
-            android:layout_width="200dp"
-            android:layout_height="47dp"
+        <RadioGroup
+            android:id="@+id/rgRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_toEndOf="@id/tvRole"
             android:layout_marginStart="12dp"
-            android:background="@drawable/rounded_edittext"
-            android:textColor="@color/white"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="25dp"
-            android:padding="8dp"
-            android:entries="@array/roleLogin"/>
+
+            android:layout_centerVertical="true">
+
+            <RadioButton
+                android:id="@+id/rbStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student"
+                android:textColor="@color/white"
+                android:fontFamily="@font/jersey_regular"
+                android:textSize="25sp"/>
+
+            <RadioButton
+                android:id="@+id/rbLecturer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lecturer"
+                android:textColor="@color/white"
+                android:fontFamily="@font/jersey_regular"
+                android:textSize="25sp"/>
+
+            <RadioButton
+                android:id="@+id/rbAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admin"
+                android:textColor="@color/white"
+                android:fontFamily="@font/jersey_regular"
+                android:textSize="25sp"/>
+        </RadioGroup>
 
     </RelativeLayout>
+
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="308dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/jersey_regular"
-        android:text="LOGIN"
         android:background="@drawable/round_button"
-        android:textSize="25dp"
-        android:onClick=""/>
+        android:fontFamily="@font/jersey_regular"
+        android:onClick="loginClicked"
+        android:text="LOGIN"
+        android:textSize="25dp" />
 
 
 </LinearLayout>

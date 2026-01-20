@@ -142,7 +142,8 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/add_faci" />
+                    android:src="@drawable/add_faci"
+                    android:onClick="facilityList"/>
 
                 <TextView
                     android:layout_width="wrap_content"

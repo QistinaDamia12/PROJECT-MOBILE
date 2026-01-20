@@ -77,7 +77,7 @@ public class LoginPage  extends AppCompatActivity
         UserService userService = ApiUtils.getUserService();
 
         // email login
-        Call<User> call = userService.login(userid, password, role);
+        Call<User> call = userService.login(userid, password);
 
         call.enqueue(new Callback<User>() {
             @Override
@@ -96,9 +96,11 @@ public class LoginPage  extends AppCompatActivity
                         spm.storeUser(user);
 
                         //go to user_dashboard
+
                         //go to admin dashboard
+
                         finish();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), admin_dashboard.class));
 
                     } else {
                         Toast.makeText(LoginPage.this, "Login error", Toast.LENGTH_LONG).show();
