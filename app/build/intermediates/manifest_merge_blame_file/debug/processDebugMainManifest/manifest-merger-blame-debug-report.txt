@@ -24,7 +24,7 @@
 17-->[androidx.core:core:1.16.0] C:\Users\damio\.gradle\caches\8.13\transforms\0a5f8ed1f8f2f7711866669a80563841\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
 18
 19    <application
-19-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:7:5-44:19
+19-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:7:5-45:19
 20        android:allowBackup="true"
 20-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:8:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -50,8 +50,8 @@
 32-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:15:9-44
 33        <activity
 33-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:18:9-20:40
-34            android:name="com.example.facility_bookuitm.admin_add_facility"
-34-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:19:13-47
+34            android:name="com.example.facility_bookuitm.loginPage"
+34-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:19:13-38
 35            android:exported="false" />
 35-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:20:13-37
 36        <activity
@@ -73,20 +73,20 @@
 44            android:exported="false" />
 44-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:32:13-37
 45        <activity
-45-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:34:9-42:20
-46            android:name="com.example.facility_bookuitm.loginPage"
-46-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:35:13-38
+45-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:34:9-43:20
+46            android:name="com.example.facility_bookuitm.admin_add_facility"
+46-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:35:13-47
 47            android:exported="true" >
 47-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:36:13-36
 48            <intent-filter>
-48-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:38:13-41:29
+48-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:39:13-42:29
 49                <action android:name="android.intent.action.MAIN" />
-49-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:39:17-69
-49-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:39:25-66
+49-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:40:17-69
+49-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:40:25-66
 50
 51                <category android:name="android.intent.category.LAUNCHER" />
-51-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:40:17-77
-51-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:40:27-74
+51-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:41:17-77
+51-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:41:27-74
 52            </intent-filter>
 53        </activity>
 54

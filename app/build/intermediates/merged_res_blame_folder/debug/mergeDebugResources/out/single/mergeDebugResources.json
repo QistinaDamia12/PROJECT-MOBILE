@@ -8,6 +8,10 @@
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\layout\\user_reservefacility_p4.xml"
     },
     {
+        "merged": "com.example.facility_bookuitm.app-debug-38:/layout_admin_add_facility.xml.flat",
+        "source": "com.example.facility_bookuitm.app-main-40:/layout/admin_add_facility.xml"
+    },
+    {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_add.xml.flat",
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\add.xml"
     },
@@ -28,8 +32,16 @@
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\layout\\user_x2.xml"
     },
     {
+        "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_f3.jpg.flat",
+        "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\f3.jpg"
+    },
+    {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\layout_admin_add_facility.xml.flat",
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\layout\\admin_add_facility.xml"
+    },
+    {
+        "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_f6.jpg.flat",
+        "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\f6.jpg"
     },
     {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\xml_backup_rules.xml.flat",
@@ -42,10 +54,6 @@
     {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_faci.png.flat",
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\faci.png"
-    },
-    {
-        "merged": "com.example.facility_bookuitm.app-debug-38:/layout_admin_list_facility.xml.flat",
-        "source": "com.example.facility_bookuitm.app-main-40:/layout/admin_list_facility.xml"
     },
     {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
@@ -92,6 +100,14 @@
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_f2.jpg.flat",
+        "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\f2.jpg"
+    },
+    {
+        "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_f5.jpg.flat",
+        "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\f5.jpg"
+    },
+    {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\layout_user_reservefacility_p3.xml.flat",
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\layout\\user_reservefacility_p3.xml"
     },
@@ -132,6 +148,10 @@
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
     },
     {
+        "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_f4.jpg.flat",
+        "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\f4.jpg"
+    },
+    {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
@@ -148,8 +168,8 @@
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\menu\\options_menu.xml"
     },
     {
-        "merged": "com.example.facility_bookuitm.app-debug-38:/layout_admin_dashboard.xml.flat",
-        "source": "com.example.facility_bookuitm.app-main-40:/layout/admin_dashboard.xml"
+        "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_f1.jpg.flat",
+        "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\f1.jpg"
     },
     {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -214,6 +234,10 @@
     {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\layout_admin_list_facility.xml.flat",
         "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\layout\\admin_list_facility.xml"
+    },
+    {
+        "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\drawable_f7.jpg.flat",
+        "source": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-main-40:\\drawable\\f7.jpg"
     },
     {
         "merged": "C:\\Users\\damio\\.gradle\\daemon\\8.13\\com.example.facility_bookuitm.app-debug-38:\\layout_user_profile.xml.flat",

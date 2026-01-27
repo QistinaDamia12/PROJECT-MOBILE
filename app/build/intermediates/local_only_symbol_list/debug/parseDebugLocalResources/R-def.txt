@@ -16,6 +16,13 @@ drawable button_tab_selector
 drawable contact_support
 drawable contacts_product
 drawable done_outline
+drawable f1
+drawable f2
+drawable f3
+drawable f4
+drawable f5
+drawable f6
+drawable f7
 drawable faci
 drawable facici
 drawable ic_launcher_background
@@ -30,6 +37,7 @@ id adminSupport
 id btnAdminProfile
 id btnApproveQuick
 id btnBack
+id btnBack2
 id btnBook
 id btnDashboard
 id btnDone
@@ -45,6 +53,7 @@ id btnOpenTimePicker
 id btnProfile
 id btnRejectQuick
 id btnRequestList
+id btnUploadImage
 id cardBook
 id confirmCapacity
 id confirmImage
@@ -54,6 +63,9 @@ id dateCard
 id edtPassword
 id edtUsername
 id etPurpose
+id etfc
+id etfl
+id etfn
 id fab
 id facilityAdd
 id facilityCapacity
@@ -64,7 +76,12 @@ id historyDate
 id historyFacilityName
 id historyStatus
 id historyTime
+id imagePreview
 id imgFacility
+id linearLayout
+id llfc
+id llfl
+id llfn
 id loginPage
 id menuBar
 id previewDetails
@@ -74,6 +91,7 @@ id profilePicture
 id rbAdmin
 id rbUser
 id recyclerView
+id relativeLayout
 id rgRole
 id rvBookList
 id timeCard

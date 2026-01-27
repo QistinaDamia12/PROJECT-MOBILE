@@ -31,7 +31,7 @@
         android:theme="@style/Theme.Facility_bookuitm"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.example.facility_bookuitm.admin_add_facility"
+            android:name="com.example.facility_bookuitm.loginPage"
             android:exported="false" />
         <activity
             android:name="com.example.facility_bookuitm.admin_dashboard"
@@ -43,7 +43,7 @@
             android:name="com.example.facility_bookuitm.user_dashboard"
             android:exported="false" />
         <activity
-            android:name="com.example.facility_bookuitm.loginPage"
+            android:name="com.example.facility_bookuitm.admin_add_facility"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

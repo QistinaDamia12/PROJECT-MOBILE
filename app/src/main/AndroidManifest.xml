@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Facility_bookuitm">
 
         <activity
-            android:name=".admin_add_facility"
+            android:name=".loginPage"
             android:exported="false" />
 
         <activity
@@ -32,8 +32,9 @@
             android:exported="false" />
 
         <activity
-            android:name=".loginPage"
+            android:name=".admin_add_facility"
             android:exported="true">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
