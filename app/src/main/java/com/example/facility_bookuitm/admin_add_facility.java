@@ -1,5 +1,6 @@
 package com.example.facility_bookuitm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -22,12 +23,13 @@ public class admin_add_facility extends AppCompatActivity {
         //add image to display
         btnUploadImage.setOnClickListener(v -> showImagePicker());
 
-        //go to previous page
+        // Go back to previous page
         ImageView btnBack2 = findViewById(R.id.btnBack);
         btnBack2.setOnClickListener(v -> {
-            // Go back to previous Activity
-            finish();
+            finish(); // closes current activity and returns to previous
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         });
+
 
     }
 

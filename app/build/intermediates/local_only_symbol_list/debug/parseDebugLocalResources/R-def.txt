@@ -31,13 +31,13 @@ drawable round_button
 drawable rounded_edittext
 drawable uitm_sample
 font jersey_regular
+id addFaci
 id adminDashboard
 id adminFacilities
 id adminSupport
 id btnAdminProfile
 id btnApproveQuick
 id btnBack
-id btnBack2
 id btnBook
 id btnDashboard
 id btnDone
@@ -82,6 +82,7 @@ id linearLayout
 id llfc
 id llfl
 id llfn
+id llft
 id loginPage
 id menuBar
 id previewDetails
