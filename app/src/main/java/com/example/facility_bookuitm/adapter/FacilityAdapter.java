@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.facility_bookuitm.Facility;
 import com.example.facility_bookuitm.R;
+import com.example.facility_bookuitm.model.Facility;
 
 import java.util.List;
 public class FacilityAdapter extends RecyclerView.Adapter<FacilityAdapter.ViewHolder> {
@@ -36,6 +36,7 @@ public class FacilityAdapter extends RecyclerView.Adapter<FacilityAdapter.ViewHo
     @Override
     public int getItemCount() { return list.size(); }
 
+    //nk paparkan dekat list
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView name, location;
         ImageView img;

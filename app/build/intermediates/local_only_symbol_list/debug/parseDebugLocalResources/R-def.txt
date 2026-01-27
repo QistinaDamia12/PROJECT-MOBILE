@@ -31,7 +31,6 @@ drawable round_button
 drawable rounded_edittext
 drawable uitm_sample
 font jersey_regular
-id addFaci
 id adminDashboard
 id adminFacilities
 id adminSupport
@@ -63,9 +62,6 @@ id dateCard
 id edtPassword
 id edtUsername
 id etPurpose
-id etfc
-id etfl
-id etfn
 id fab
 id facilityAdd
 id facilityCapacity
@@ -82,6 +78,7 @@ id linearLayout
 id llfc
 id llfl
 id llfn
+id llfs
 id llft
 id loginPage
 id menuBar
@@ -100,10 +97,14 @@ id topBar
 id tvRole
 id txtCapacity
 id txtFacilityName
+id txtLoca
 id txtLocation
+id txtName
 id txtSelectedDate
 id txtSelectedTime
+id txtStatus
 id txtSuccessDetail
+id txtType
 id userDashboard
 id userID
 id userName

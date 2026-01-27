@@ -3789,7 +3789,6 @@ int id action_text 0x7f0a0044
 int id actions 0x7f0a0045
 int id activity_chooser_view_content 0x7f0a0046
 int id add 0x7f0a0047
-int id addFaci 0x7f0a0048
 int id adjust_height 0x7f0a0049
 int id adjust_width 0x7f0a004a
 int id adminDashboard 0x7f0a004b
@@ -3940,9 +3939,6 @@ int id enterAlwaysCollapsed 0x7f0a00db
 int id entireSpace 0x7f0a00dc
 int id escape 0x7f0a00dd
 int id etPurpose 0x7f0a00de
-int id etfc 0x7f0a00df
-int id etfl 0x7f0a00e0
-int id etfn 0x7f0a00e1
 int id exitUntilCollapsed 0x7f0a00e2
 int id expand_activities_button 0x7f0a00e3
 int id expanded_menu 0x7f0a00e4
@@ -4024,6 +4020,7 @@ int id list_item 0x7f0a012f
 int id llfc 0x7f0a0130
 int id llfl 0x7f0a0131
 int id llfn 0x7f0a0132
+int id llfs 0x7f0a025d
 int id llft 0x7f0a0133
 int id loginPage 0x7f0a0134
 int id m3_side_sheet 0x7f0a0135
@@ -4288,10 +4285,14 @@ int id triangle 0x7f0a0237
 int id tvRole 0x7f0a0238
 int id txtCapacity 0x7f0a0239
 int id txtFacilityName 0x7f0a023a
+int id txtLoca 0x7f0a025e
 int id txtLocation 0x7f0a023b
+int id txtName 0x7f0a025f
 int id txtSelectedDate 0x7f0a023c
 int id txtSelectedTime 0x7f0a023d
+int id txtStatus 0x7f0a0260
 int id txtSuccessDetail 0x7f0a023e
+int id txtType 0x7f0a0261
 int id unchecked 0x7f0a023f
 int id uniform 0x7f0a0240
 int id unlabeled 0x7f0a0241

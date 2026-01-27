@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.facility_bookuitm.model.Facility;
 import com.example.facility_bookuitm.model.User;
 import com.example.facility_bookuitm.remote.ApiUtils;
 import com.example.facility_bookuitm.remote.FacilityService;
@@ -91,17 +92,17 @@ public class admin_add_facility extends AppCompatActivity {
     }
 
 
-    public void addFacility(View v) {
+    public void addNewFacility(View v) {
         // get values in form
-        String name = txtName.getText().toString();
-        String location = txtLoca.getText().toString();
-        String status = txtStatus.getText().toString();
-        String type = txtType.getText().toString();
+        String facilityName = txtName.getText().toString();
+        String facilityLocation = txtLoca.getText().toString();
+        String facilityStatus = txtStatus.getText().toString();
+        String facilityType = txtType.getText().toString();
 
         //convert text to int
-        int capacity = 0;
+        int facilityCapacity = 0;
         try {
-            capacity = Integer.parseInt(txtCapacity.getText().toString().trim());
+            facilityCapacity = Integer.parseInt(txtCapacity.getText().toString().trim());
         } catch (NumberFormatException e) {
             txtCapacity.setError("Enter a valid number");
             return; // stop further processing
@@ -113,22 +114,30 @@ public class admin_add_facility extends AppCompatActivity {
 
         // send request to add new book to the REST API
         FacilityService facilityService = ApiUtils.getFacilityService();
-        Call<Facility> call = facilityService.addFacility(name, location, "default.jpg", status, type, capacity);
 
-        // execute
+        Call<Facility> call = facilityService.addFacility(
+                user.getToken(),
+                facilityName,
+                facilityLocation,
+                "default.jpg",
+                facilityStatus,
+                facilityType,
+                facilityCapacity
+        );
+
         call.enqueue(new Callback<Facility>() {
             @Override
             public void onResponse(Call<Facility> call, Response<Facility> response) {
-
                 // for debug purpose
                 Log.d("MyApp:", "Response: " + response.raw().toString());
 
                 if (response.code() == 201) {
                     // book added successfully
-                    Facility addedFacility = response.body();
+                    Facility addedBook = response.body();
                     // display message
                     Toast.makeText(getApplicationContext(),
-                            addedFacility.getName() + " added successfully.",
+                            addedBook.getFacilityName()
+                                    + " added successfully.",
                             Toast.LENGTH_LONG).show();
 
                     // end this activity and go back to previous activity, BookListActivity
@@ -141,27 +150,30 @@ public class admin_add_facility extends AppCompatActivity {
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Error: " + response.message(), Toast.LENGTH_LONG).show();
-                    // server return other error
+                    // server returnvoid other error
                     Log.e("MyApp: ", response.toString());
                 }
             }
 
             @Override
-            public void onFailure(Call<Facility> call, Throwable throwable) {
-                Toast.makeText(getApplicationContext(),"Error [" + t.getMessage() + "]",
-                        Toast.LENGTH_LONG).show();
-                // for debug purpose
-                Log.d("MyApp:", "Error: " + t.getCause().getMessage());
-
-            }
-
-            @Override
             public void onFailure(Call<Facility> call, Throwable t) {
-                Toast.makeText(getApplicationContext(),"Error [" + t.getMessage() + "]",
-                        Toast.LENGTH_LONG).show();
-                // for debug purpose
-                Log.d("MyApp:", "Error: " + t.getCause().getMessage());
+                Log.e("API", t.getMessage());
             }
         });
+
+    }
+
+    private void clearSessionAndRedirect()
+    {
+        // clear the shared preferences
+        SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
+        spm.logout();
+
+        // terminate this MainActivity
+        finish();
+
+        // forward to Login Page
+        Intent intent = new Intent(this, loginPage.class);
+        startActivity(intent);
     }
 }

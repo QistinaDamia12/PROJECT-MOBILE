@@ -219,9 +219,10 @@
                 android:layout_marginTop="4dp"
                 android:background="@android:color/transparent"
                 android:hint="e.g. Auditorium, Meeting Room"
-                android:inputType="number"
+                android:inputType="textCapSentences"
                 android:textColor="#000000"
                 android:textSize="18sp"/>
+
 
         </LinearLayout>
 
@@ -270,14 +271,10 @@
     </com.google.android.material.card.MaterialCardView>
 
     <Button
-        android:id="@+id/addFaci"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Add Facility"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="addNewFacility"
         app:layout_constraintTop_toBottomOf="@id/llfc" />
 
 
