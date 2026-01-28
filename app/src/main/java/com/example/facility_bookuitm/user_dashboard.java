@@ -48,4 +48,11 @@ public class user_dashboard extends AppCompatActivity {
         //Intent intent = new Intent(this, HistoryActivity.class);
         //startActivity(intent);
     }
+
+    public void bookFacility(View view) {
+        finish();
+        // forward to Login Page
+        Intent intent = new Intent(this, user_reservationfacility_list.class);
+        startActivity(intent);
+    }
 }
