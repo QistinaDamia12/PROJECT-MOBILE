@@ -4162,7 +4162,6 @@ int id rbLecturer 0x7f0a01b6
 int id rbStudent 0x7f0a01b7
 int id rectangles 0x7f0a01b8
 int id recyclerViewHistory 0x7f0a01b9
-int id recyclerViewRequests 0x7f0a01ba
 int id relativeLayout 0x7f0a01bb
 int id report_drawn 0x7f0a01bc
 int id reservationFacilityList 0x7f0a01bd

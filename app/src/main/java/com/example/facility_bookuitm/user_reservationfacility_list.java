@@ -3,9 +3,6 @@ package com.example.facility_bookuitm;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -19,7 +16,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.facility_bookuitm.adapter.FacilityAdapter;
+import com.example.facility_bookuitm.adapter.AdminFacilityAdapter;
+import com.example.facility_bookuitm.adapter.UserFacilityAdapter;
 import com.example.facility_bookuitm.model.DeleteResponse;
 import com.example.facility_bookuitm.model.Facility;
 import com.example.facility_bookuitm.model.User;
@@ -38,21 +36,21 @@ public class user_reservationfacility_list extends AppCompatActivity {
     //initialize id text
     private FacilityService facilityService;
     private RecyclerView rvReserveFacility;
-    private FacilityAdapter adapter;
+    private UserFacilityAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.admin_list_facility);
+        setContentView(R.layout.user_reservationfacitlity_list);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.facilityList), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.reservationFacilityList), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        rvReserveFacility = findViewById(R.id.rvFacilityList);
+        rvReserveFacility = findViewById(R.id.rvReserveFacility);
         registerForContextMenu(rvReserveFacility);
     }
 
@@ -87,7 +85,7 @@ public class user_reservationfacility_list extends AppCompatActivity {
                 if (response.code() == 200) {
                     List<Facility> facilities = response.body();
 
-                    adapter = new FacilityAdapter(getApplicationContext(), facilities);
+                    adapter = new UserFacilityAdapter(getApplicationContext(), facilities);
                     rvReserveFacility.setAdapter(adapter);
                     rvReserveFacility.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     rvReserveFacility.addItemDecoration(new DividerItemDecoration(
@@ -133,40 +131,6 @@ public class user_reservationfacility_list extends AppCompatActivity {
         spm.logout();
         finish();
         startActivity(new Intent(this, loginPage.class));
-    }
-
-
-
-    private void doDeleteBook(Facility selectedFacility) {
-        SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
-        User user = spm.getUser();
-        String token = user.getToken();
-
-        facilityService = ApiUtils.getFacilityService();
-        facilityService.deleteFacility(token, selectedFacility.getFacilityID())
-                .enqueue(new Callback<DeleteResponse>() {
-                    @Override
-                    public void onResponse(Call<DeleteResponse> call, Response<DeleteResponse> response) {
-                        if (response.code() == 200) {
-                            displayAlert("Facility successfully deleted");
-                            updateRecyclerView();
-                        } else if (response.code() == 401) {
-                            Toast.makeText(getApplicationContext(),
-                                    "Invalid session. Please login again",
-                                    Toast.LENGTH_LONG).show();
-                            clearSessionAndRedirect();
-                        } else {
-                            Toast.makeText(getApplicationContext(),
-                                    "Error: " + response.message(),
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<DeleteResponse> call, Throwable t) {
-                        displayAlert("Error: " + t.getMessage());
-                    }
-                });
     }
 
 

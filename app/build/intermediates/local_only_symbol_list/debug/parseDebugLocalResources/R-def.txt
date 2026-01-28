@@ -97,7 +97,6 @@ id profilePicture
 id rbLecturer
 id rbStudent
 id recyclerViewHistory
-id recyclerViewRequests
 id relativeLayout
 id reservationFacilityList
 id rgUserType

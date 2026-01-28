@@ -3,7 +3,7 @@ package com.example.facility_bookuitm.remote;
 public class ApiUtils
 {
     // REST API server URL
-    public static final String BASE_URL =  "http://aptitude.my/2025138587/api/";
+    public static final String BASE_URL =  "http://aptitude.my/2024771469/api/";
 
     // return UserService instance
     public static UserService getUserService() {
