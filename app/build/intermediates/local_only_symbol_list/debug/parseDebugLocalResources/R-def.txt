@@ -140,8 +140,8 @@ layout user_list_history
 layout user_list_history_design
 layout user_profile
 layout user_reservation_success
-layout user_reservationfacitlity_list
-layout user_reservationfacitlity_list_design
+layout user_reservationfacility_list
+layout user_reservationfacility_list_design
 menu facility_context_menu
 menu options_menu
 mipmap ic_launcher

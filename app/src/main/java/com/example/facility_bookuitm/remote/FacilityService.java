@@ -56,5 +56,4 @@ public interface FacilityService {
             @Field("facilityCapacity") int facilityCapacity
     );
 
-
 }

@@ -4,10 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.ContextMenu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -20,9 +16,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.facility_bookuitm.adapter.AdminFacilityAdapter;
 import com.example.facility_bookuitm.adapter.UserFacilityAdapter;
-import com.example.facility_bookuitm.model.DeleteResponse;
 import com.example.facility_bookuitm.model.Facility;
 import com.example.facility_bookuitm.model.User;
 import com.example.facility_bookuitm.remote.ApiUtils;
@@ -45,21 +39,14 @@ public class user_list_facility extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.admin_list_facility);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.facilityList), (v, insets) -> {
+        setContentView(R.layout.user_reservationfacility_list);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.reservationFacilityList), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // get reference to the RecyclerView bookList
         rvReserveFacility = findViewById(R.id.rvReserveFacility);
-
-        //register for context menu
-        registerForContextMenu(rvReserveFacility);
-
-        // fetch and update book list
-
     }
 
     @Override
@@ -69,47 +56,45 @@ public class user_list_facility extends AppCompatActivity {
     }
 
     private void updateRecyclerView() {
-        // get user info from SharedPreferences to get token value
-        SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
+        SharedPrefManager spm = new SharedPrefManager(this);
         User user = spm.getUser();
         String token = user.getToken();
 
-        // get book service instance
         facilityService = ApiUtils.getFacilityService();
-
-        // execute the call. send the user token when sending the query
         facilityService.getAllFacility(token).enqueue(new Callback<List<Facility>>() {
             @Override
             public void onResponse(Call<List<Facility>> call, Response<List<Facility>> response) {
-                // for debug purpose
                 Log.d("MyApp:", "Response: " + response.raw().toString());
 
                 if (response.code() == 200) {
-                    // Get list of book object from response
                     List<Facility> facilities = response.body();
 
-                    // initialize adapter
-                    adapter = new UserFacilityAdapter(getApplicationContext(), facilities);
+                    // Initialize adapter with click listener
+                    adapter = new UserFacilityAdapter(getApplicationContext(), facilities, facility -> {
+                        // This lambda is called when user clicks an AVAILABLE facility
+                        if ("AVAILABLE".equalsIgnoreCase(facility.getFacilityStatus())) {
+                            Intent intent = new Intent(user_list_facility.this, user_add_reservation.class);
+                            intent.putExtra("facility_id", facility.getFacilityID());
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(user_list_facility.this,
+                                    "This facility is under maintenance and cannot be reserved.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
-                    // set adapter to the RecyclerView
                     rvReserveFacility.setAdapter(adapter);
-
-                    // set layout to recycler view
                     rvReserveFacility.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-                    // add separator between item in the list
                     DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvReserveFacility.getContext(),
                             DividerItemDecoration.VERTICAL);
                     rvReserveFacility.addItemDecoration(dividerItemDecoration);
-                }
-                else if (response.code() == 401) {
-                    // invalid token, ask user to relogin
+
+                } else if (response.code() == 401) {
                     Toast.makeText(getApplicationContext(), "Invalid session. Please login again", Toast.LENGTH_LONG).show();
                     clearSessionAndRedirect();
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Error: " + response.message(), Toast.LENGTH_LONG).show();
-                    // server return other error
                     Log.e("MyApp: ", response.toString());
                 }
             }
@@ -122,46 +107,20 @@ public class user_list_facility extends AppCompatActivity {
         });
     }
 
-
-    /**
-     * Displaying an alert dialog with a single button
-     * @param message - message to be displayed
-     */
     public void displayAlert(String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(message)
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        //do things
-                        dialog.cancel();
-                    }
-                });
+                .setPositiveButton("OK", (dialog, id) -> dialog.cancel());
         AlertDialog alert = builder.create();
         alert.show();
     }
 
     public void clearSessionAndRedirect() {
-        // clear the shared preferences
         SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
         spm.logout();
-
-        // terminate this MainActivity
         finish();
-
-        // forward to Login Page
         Intent intent = new Intent(this, loginPage.class);
-        startActivity(intent);
-
-    }
-
-    /**
-     * Action handler for Add Book floating action button
-     * @param view
-     */
-    public void floatingAddBookClicked(View view) {
-
-        Intent intent = new Intent(getApplicationContext(), admin_add_facility.class);
         startActivity(intent);
     }
 }

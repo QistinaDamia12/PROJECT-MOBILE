@@ -45,16 +45,15 @@ public class user_dashboard extends AppCompatActivity {
      * Berfungsi apabila kad/butang 'Profile/History' ditekan
      */
     public void profilebtn(View view) {
-        Toast.makeText(this, "Opening Booking History...", Toast.LENGTH_SHORT).show();
-        // Memanggil HistoryActivity untuk melihat rekod tempahan
-        //Intent intent = new Intent(this, HistoryActivity.class);
+        Toast.makeText(this, "Opening Booking Profile...", Toast.LENGTH_SHORT).show();
+        //Intent intent = new Intent(this, user_.class);
         //startActivity(intent);
     }
 
     public void bookFacility(View view) {
         finish();
         // forward to Login Page
-        Intent intent = new Intent(this, user_reservationfacility_list.class);
+        Intent intent = new Intent(this, user_list_facility.class);
         startActivity(intent);
     }
 }

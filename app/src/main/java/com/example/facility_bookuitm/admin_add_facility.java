@@ -1,5 +1,6 @@
 package com.example.facility_bookuitm;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,51 +19,37 @@ import com.example.facility_bookuitm.remote.ApiUtils;
 import com.example.facility_bookuitm.remote.FacilityService;
 import com.example.facility_bookuitm.sharedpref.SharedPrefManager;
 
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-import java.util.concurrent.atomic.AtomicReference;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class admin_add_facility extends AppCompatActivity {
 
-    private static ImageView imagePreview;
-    private EditText txtName;
-    private EditText txtLoca;
-    private EditText txtStatus;
-    private EditText txtType;
-    private EditText txtCapacity;
-    private String selectedImageName = "default.jpg";
-
+    private ImageView imagePreview;
+    private EditText txtName, txtLoca, txtStatus, txtType, txtCapacity;
+    private String selectedImageName = "default.jpg"; // default image
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_add_facility);
 
-        Button btnUploadImage = findViewById(R.id.btnUploadImage);
+        // Bind views
         imagePreview = findViewById(R.id.imagePreview);
-        // get view objects references
         txtName = findViewById(R.id.txtName);
         txtLoca = findViewById(R.id.txtLoca);
         txtStatus = findViewById(R.id.txtStatus);
         txtType = findViewById(R.id.txtType);
         txtCapacity = findViewById(R.id.txtCapacity);
 
-        //add image to display
+        Button btnUploadImage = findViewById(R.id.btnUploadImage);
         btnUploadImage.setOnClickListener(v -> showImagePicker());
 
-        // Go back to previous page
-        ImageView btnBack2 = findViewById(R.id.btnBack);
-        btnBack2.setOnClickListener(v -> {
-            finish(); // closes current activity and returns to previous
-            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        });
-
+        ImageView btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> finish());
     }
 
+    // ===== IMAGE PICKER =====
     private void showImagePicker() {
         String[] images = {"Auditorium", "Meeting Room", "Surau", "Court", "Gym", "Lab", "Lecture Room"};
 
@@ -103,6 +90,7 @@ public class admin_add_facility extends AppCompatActivity {
         builder.show();
     }
 
+    // ===== ADD NEW FACILITY =====
     public void addNewFacility(View v) {
         String name = txtName.getText().toString().trim();
         String location = txtLoca.getText().toString().trim();
@@ -126,63 +114,59 @@ public class admin_add_facility extends AppCompatActivity {
         SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
         User user = spm.getUser();
 
-        // send request to add new book to the REST API
-        FacilityService facilityService = ApiUtils.getFacilityService();
-        Call<Facility> call = facilityService.addFacility(user.getToken(), name, location, "default.jpg", status, type, capacityInt);
+        if (user == null || user.getToken() == null || user.getToken().isEmpty()) {
+            Toast.makeText(this, "Please login first", Toast.LENGTH_SHORT).show();
+            clearSessionAndRedirect();
+            return;
+        }
 
-        // execute
+        // ✅ SEND THE SELECTED IMAGE
+        FacilityService facilityService = ApiUtils.getFacilityService();
+        Call<Facility> call = facilityService.addFacility(
+                user.getToken(),
+                name,
+                location,
+                selectedImageName, // <---- send selected image here
+                status,
+                type,
+                capacityInt
+        );
+
         call.enqueue(new Callback<Facility>() {
             @Override
             public void onResponse(Call<Facility> call, Response<Facility> response) {
-
-                // for debug purpose
                 Log.d("MyApp:", "Response: " + response.raw().toString());
 
                 if (response.code() == 201) {
-                    // book added successfully
                     Facility addedFacility = response.body();
-                    // display message
                     Toast.makeText(getApplicationContext(),
                             addedFacility.getFacilityType() + " added successfully.",
                             Toast.LENGTH_LONG).show();
-
-                    // end this activity and go back to previous activity, BookListActivity
                     finish();
-                }
-                else if (response.code() == 401) {
-                    // invalid token, ask user to relogin
+                } else if (response.code() == 401) {
                     Toast.makeText(getApplicationContext(), "Invalid session. Please login again", Toast.LENGTH_LONG).show();
                     clearSessionAndRedirect();
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Error: " + response.message(), Toast.LENGTH_LONG).show();
-                    // server return other error
                     Log.e("MyApp: ", response.toString());
                 }
             }
 
             @Override
             public void onFailure(Call<Facility> call, Throwable t) {
-                Toast.makeText(getApplicationContext(),"Error [" + t.getMessage() + "]",
-                        Toast.LENGTH_LONG).show();
-                // for debug purpose
-                Log.d("MyApp:", "Error: " + t.getCause().getMessage());
+                Toast.makeText(getApplicationContext(),"Error [" + t.getMessage() + "]", Toast.LENGTH_LONG).show();
+                Log.d("MyApp:", "Error: " + (t.getCause() != null ? t.getCause().getMessage() : t.getMessage()));
             }
         });
     }
 
-
+    // ===== LOGOUT AND REDIRECT =====
     public void clearSessionAndRedirect() {
-        // clear the shared preferences
         SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
         spm.logout();
-
-        // terminate this MainActivity
         finish();
-
-        // forward to Login Page
         Intent intent = new Intent(this, loginPage.class);
         startActivity(intent);
-
     }
 }
+

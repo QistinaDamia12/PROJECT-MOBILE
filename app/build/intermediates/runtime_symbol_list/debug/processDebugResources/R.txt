@@ -4554,8 +4554,8 @@ int layout user_list_history 0x7f0d0078
 int layout user_list_history_design 0x7f0d0079
 int layout user_profile 0x7f0d007a
 int layout user_reservation_success 0x7f0d007b
-int layout user_reservationfacitlity_list 0x7f0d007c
-int layout user_reservationfacitlity_list_design 0x7f0d007d
+int layout user_reservationfacility_list 0x7f0d007e
+int layout user_reservationfacility_list_design 0x7f0d007f
 int menu facility_context_menu 0x7f0f0000
 int menu options_menu 0x7f0f0001
 int mipmap ic_launcher 0x7f100000

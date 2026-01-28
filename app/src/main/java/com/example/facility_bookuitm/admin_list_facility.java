@@ -219,13 +219,6 @@ public class admin_list_facility extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
-//    private void doViewDetails(Facility selectedFacility) {
-//        Log.d("MyApp:", "viewing details: " + selectedFacility.toString());
-//        // forward user to BookDetailsActivity, passing the selected book id
-//        Intent intent = new Intent(getApplicationContext(), BookDetailsActivity.class);
-//        intent.putExtra("book_id", selectedFacility.getFacilityID());
-//        startActivity(intent);
-//    }
 
     /**
      * Action handler for Add Book floating action button
