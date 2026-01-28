@@ -139,7 +139,8 @@
                 android:layout_height="match_parent"
                 android:background="#781D4E"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:onClick="facilityList">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -153,8 +154,10 @@
                     android:fontFamily="@font/jersey_regular"
                     android:text="Facilities"
                     android:textColor="@android:color/white"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+                    android:onClick="facilityList"/>
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
