@@ -62,54 +62,6 @@
         android:layout_marginTop="18dp"
         android:paddingLeft="16dp"/>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp">
-
-        <TextView
-            android:id="@+id/tvRole"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Role:"
-            android:textColor="@color/white"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="25sp"
-            android:layout_centerVertical="true"/>
-
-        <RadioGroup
-            android:id="@+id/rgRole"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_toEndOf="@id/tvRole"
-            android:layout_marginStart="12dp"
-
-            android:layout_centerVertical="true">
-
-            <RadioButton
-                android:id="@+id/rbUser"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Student/Lecturer"
-                android:textColor="@color/white"
-                android:fontFamily="@font/jersey_regular"
-                android:textSize="25sp"/>
-
-            <RadioButton
-                android:id="@+id/rbAdmin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Admin"
-                android:textColor="@color/white"
-                android:fontFamily="@font/jersey_regular"
-                android:textSize="25sp"
-                android:layout_marginLeft="10dp"/>
-        </RadioGroup>
-
-    </RelativeLayout>
-
-
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="308dp"

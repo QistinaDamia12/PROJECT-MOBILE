@@ -14,16 +14,20 @@ import retrofit2.http.Path;
 
 public interface FacilityService {
 
-
+    // Try with "api-key" instead of "Authorization"
     @GET("facilities")
-    Call<List<Facility>> getAllBooks(@Header("api-key") String api_key);
+    Call<List<Facility>> getAllFacility(@Header("api-key") String token);
+
     @GET("facilities/{facilityID}")
-    Call<Facility> getFacility(@Header("api-key") String api_key, @Path("id") int id);
+    Call<Facility> getFacility(
+            @Header("api-key") String token,
+            @Path("facilityID") int facilityID
+    );
 
     @FormUrlEncoded
     @POST("facilities")
     Call<Facility> addFacility(
-            @Header("Authorization") String token,
+            @Header("api-key") String token,
             @Field("facilityName") String facilityName,
             @Field("facilityLocation") String facilityLocation,
             @Field("facilityPicture") String facilityPicture,
@@ -33,6 +37,8 @@ public interface FacilityService {
     );
 
     @DELETE("facilities/{facilityID}")
-    Call<DeleteResponse> deleteFacility(@Header ("api-key") String apiKey, @Path("id") int id);
-
+    Call<DeleteResponse> deleteFacility(
+            @Header("api-key") String token,
+            @Path("facilityID") int facilityID
+    );
 }

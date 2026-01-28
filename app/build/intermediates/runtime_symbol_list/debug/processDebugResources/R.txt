@@ -4154,15 +4154,12 @@ int id progress_circular 0x7f0a01b1
 int id progress_horizontal 0x7f0a01b2
 int id radio 0x7f0a01b3
 int id ratio 0x7f0a01b4
-int id rbAdmin 0x7f0a01b5
-int id rbUser 0x7f0a01b6
 int id rectangles 0x7f0a01b7
 int id recyclerView 0x7f0a01b8
 int id relativeLayout 0x7f0a01b9
 int id report_drawn 0x7f0a01ba
 int id retreat 0x7f0a01bb
 int id reverseSawtooth 0x7f0a01bc
-int id rgRole 0x7f0a01bd
 int id right 0x7f0a01be
 int id rightToLeft 0x7f0a01bf
 int id right_icon 0x7f0a01c0
@@ -4289,7 +4286,6 @@ int id triangle 0x7f0a0238
 int id tvCapacity 0x7f0a0239
 int id tvLoca 0x7f0a023a
 int id tvName 0x7f0a023b
-int id tvRole 0x7f0a023c
 int id tvStatus 0x7f0a023d
 int id tvType 0x7f0a023e
 int id txtCapacity 0x7f0a023f
@@ -4537,12 +4533,12 @@ int layout select_dialog_multichoice_material 0x7f0d006f
 int layout select_dialog_singlechoice_material 0x7f0d0070
 int layout support_simple_spinner_dropdown_item 0x7f0d0071
 int layout user_dashboard 0x7f0d0072
+int layout user_list_history_design 0x7f0d007b
 int layout user_profile 0x7f0d0073
 int layout user_reservationfacility_p1 0x7f0d0074
 int layout user_reservationfacility_p1_design 0x7f0d0075
 int layout user_reservefacility_p2 0x7f0d0076
 int layout user_reservefacility_p3 0x7f0d0077
-int layout user_x2 0x7f0d0078
 int layout user_x3 0x7f0d0079
 int menu facility_context_menu 0x7f0f0000
 int menu options_menu 0x7f0f0001

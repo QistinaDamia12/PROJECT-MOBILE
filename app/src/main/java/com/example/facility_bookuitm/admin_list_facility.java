@@ -13,9 +13,9 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.core.graphics.Insets;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +28,7 @@ import com.example.facility_bookuitm.remote.ApiUtils;
 import com.example.facility_bookuitm.remote.FacilityService;
 import com.example.facility_bookuitm.sharedpref.SharedPrefManager;
 
+import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -45,20 +46,15 @@ public class admin_list_facility extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.admin_list_facility);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.facilityList), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // get reference to the RecyclerView bookList
         rvFacilityList = findViewById(R.id.rvFacilityList);
-
-        //register for context menu
         registerForContextMenu(rvFacilityList);
-
-        // fetch and update book list
-
     }
 
     @Override
@@ -68,132 +64,108 @@ public class admin_list_facility extends AppCompatActivity {
     }
 
     private void updateRecyclerView() {
-        // get user info from SharedPreferences to get token value
         SharedPrefManager spm = new SharedPrefManager(this);
         User user = spm.getUser();
-        String token = user.getToken();
 
-        // get book service instance
+        if (user == null) {
+            Toast.makeText(this, "Please login first", Toast.LENGTH_SHORT).show();
+            clearSessionAndRedirect();
+            return;
+        }
+
+        String token = user.getToken();
+        if (token == null || token.isEmpty()) {
+            Toast.makeText(this, "Session expired. Please login again", Toast.LENGTH_SHORT).show();
+            clearSessionAndRedirect();
+            return;
+        }
+
         facilityService = ApiUtils.getFacilityService();
 
-        // execute the call. send the user token when sending the query
-        facilityService.getAllBooks(token).enqueue(new Callback<List<Facility>>() {
+        facilityService.getAllFacility(token).enqueue(new Callback<List<Facility>>() {
             @Override
             public void onResponse(Call<List<Facility>> call, Response<List<Facility>> response) {
-                // for debug purpose
-                Log.d("MyApp:", "Response: " + response.raw().toString());
-
                 if (response.code() == 200) {
+                    List<Facility> facilities = response.body();
 
-                    List<Facility> facilities= response.body();
-
-                    // initialize adapter
                     adapter = new FacilityAdapter(getApplicationContext(), facilities);
-
-                    // set adapter to the RecyclerView
                     rvFacilityList.setAdapter(adapter);
-
-                    // set layout to recycler view
                     rvFacilityList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    rvFacilityList.addItemDecoration(new DividerItemDecoration(
+                            rvFacilityList.getContext(),
+                            DividerItemDecoration.VERTICAL
+                    ));
 
-                    // add separator between item in the list
-                    DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvFacilityList.getContext(),
-                            DividerItemDecoration.VERTICAL);
-                    rvFacilityList.addItemDecoration(dividerItemDecoration);
-                }
-                else if (response.code() == 401) {
-                    // invalid token, ask user to relogin
-                    Toast.makeText(getApplicationContext(), "Invalid session. Please login again", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),
+                            facilities.size() + " facilities loaded",
+                            Toast.LENGTH_SHORT).show();
+                } else if (response.code() == 401) {
+                    Toast.makeText(getApplicationContext(),
+                            "Invalid session. Please login again",
+                            Toast.LENGTH_LONG).show();
                     clearSessionAndRedirect();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Error: " + response.message(), Toast.LENGTH_LONG).show();
-                    // server return other error
-                    Log.e("MyApp: ", response.toString());
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Error: " + response.message(),
+                            Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Facility>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Error connecting to the server", Toast.LENGTH_LONG).show();
-                Log.e("MyApp:", t.toString());
+                Toast.makeText(getApplicationContext(),
+                        "Error connecting to the server",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    /**
-     * Delete book record. Called by contextual menu "Delete"
-     * @param selectedFacility - book selected by user
-     */
     private void doDeleteBook(Facility selectedFacility) {
-        // get user info from SharedPreferences
         SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
         User user = spm.getUser();
+        String token = user.getToken();
 
-        // prepare REST API call
-        FacilityService facilityService = ApiUtils.getFacilityService();
-        Call<DeleteResponse> call = facilityService.deleteFacility(user.getToken(), selectedFacility.getFacilityID());
+        facilityService = ApiUtils.getFacilityService();
+        facilityService.deleteFacility(token, selectedFacility.getFacilityID())
+                .enqueue(new Callback<DeleteResponse>() {
+                    @Override
+                    public void onResponse(Call<DeleteResponse> call, Response<DeleteResponse> response) {
+                        if (response.code() == 200) {
+                            displayAlert("Facility successfully deleted");
+                            updateRecyclerView();
+                        } else if (response.code() == 401) {
+                            Toast.makeText(getApplicationContext(),
+                                    "Invalid session. Please login again",
+                                    Toast.LENGTH_LONG).show();
+                            clearSessionAndRedirect();
+                        } else {
+                            Toast.makeText(getApplicationContext(),
+                                    "Error: " + response.message(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
 
-        // execute the call
-        call.enqueue(new Callback<DeleteResponse>() {
-            @Override
-            public void onResponse(Call<DeleteResponse> call, Response<DeleteResponse> response) {
-                if (response.code() == 200) {
-                    // 200 means OK
-                    displayAlert("Facility successfully deleted");
-                    // update data in list view
-                    updateRecyclerView();
-                }
-                else if (response.code() == 401) {
-                    // invalid token, ask user to relogin
-                    Toast.makeText(getApplicationContext(), "Invalid session. Please login again", Toast.LENGTH_LONG).show();
-                    clearSessionAndRedirect();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Error: " + response.message(), Toast.LENGTH_LONG).show();
-                    // server return other error
-                    Log.e("MyApp: ", response.toString());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<DeleteResponse> call, Throwable t) {
-                displayAlert("Error [" + t.getMessage() + "]");
-                Log.e("MyApp:", t.getMessage());
-            }
-        });
-    }
-
-    /**
-     * Displaying an alert dialog with a single button
-     * @param message - message to be displayed
-     */
-    public void displayAlert(String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(message)
-                .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        //do things
-                        dialog.cancel();
+                    @Override
+                    public void onFailure(Call<DeleteResponse> call, Throwable t) {
+                        displayAlert("Error: " + t.getMessage());
                     }
                 });
-        AlertDialog alert = builder.create();
-        alert.show();
+    }
+
+    public void displayAlert(String message) {
+        new AlertDialog.Builder(this)
+                .setMessage(message)
+                .setCancelable(false)
+                .setPositiveButton("OK", (dialog, id) -> dialog.cancel())
+                .create()
+                .show();
     }
 
     public void clearSessionAndRedirect() {
-        // clear the shared preferences
         SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
         spm.logout();
-
-        // terminate this MainActivity
         finish();
-
-        // forward to Login Page
-        Intent intent = new Intent(this, loginPage.class);
-        startActivity(intent);
-
+        startActivity(new Intent(this, loginPage.class));
     }
 
     @Override
@@ -205,35 +177,18 @@ public class admin_list_facility extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         Facility selectedFacility = adapter.getSelectedItem();
-        Log.d("MyApp", "selected "+selectedFacility.toString());    // debug purpose
 
-        if (item.getItemId() == R.id.menu_details) {
-            // user clicked details contextual menu
-            //doViewDetails(selectedFacility);
-        }
-        else if (item.getItemId() == R.id.menu_delete) {
-            // user clicked the delete contextual menu
+        if (selectedFacility == null) return super.onContextItemSelected(item);
+
+        if (item.getItemId() == R.id.menu_delete) {
             doDeleteBook(selectedFacility);
         }
 
         return super.onContextItemSelected(item);
     }
 
-//    private void doViewDetails(Facility selectedFacility) {
-//        Log.d("MyApp:", "viewing details: " + selectedFacility.toString());
-//        // forward user to BookDetailsActivity, passing the selected book id
-//        Intent intent = new Intent(getApplicationContext(), BookDetailsActivity.class);
-//        intent.putExtra("book_id", selectedFacility.getFacilityID());
-//        startActivity(intent);
-//    }
-
-    /**
-     * Action handler for Add Book floating action button
-     * @param view
-     */
     public void floatingAddBookClicked(View view) {
-        // forward user to new
-        Intent intent = new Intent(getApplicationContext(), admin_add_facility.class);
-        startActivity(intent);
+        startActivity(new Intent(getApplicationContext(), admin_add_facility.class));
     }
 }
+
