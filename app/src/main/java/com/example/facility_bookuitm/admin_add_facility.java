@@ -1,25 +1,179 @@
 package com.example.facility_bookuitm;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.facility_bookuitm.model.Facility;
+import com.example.facility_bookuitm.model.User;
+import com.example.facility_bookuitm.remote.ApiUtils;
+import com.example.facility_bookuitm.remote.FacilityService;
+import com.example.facility_bookuitm.sharedpref.SharedPrefManager;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.concurrent.atomic.AtomicReference;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class admin_add_facility extends AppCompatActivity {
+
+    private static ImageView imagePreview;
+    private EditText txtName;
+    private EditText txtLoca;
+    private EditText txtStatus;
+    private EditText txtType;
+    private EditText txtCapacity;
+    private String selectedImageName = "default.jpg";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.admin_add_facility);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.facilityAdd), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        Button btnUploadImage = findViewById(R.id.btnUploadImage);
+        imagePreview = findViewById(R.id.imagePreview);
+        // get view objects references
+        txtName = findViewById(R.id.txtName);
+        txtLoca = findViewById(R.id.txtLoca);
+        txtStatus = findViewById(R.id.txtStatus);
+        txtType = findViewById(R.id.txtType);
+        txtCapacity = findViewById(R.id.txtCapacity);
+
+        //add image to display
+        btnUploadImage.setOnClickListener(v -> showImagePicker());
+
+        // Go back to previous page
+        ImageView btnBack2 = findViewById(R.id.btnBack);
+        btnBack2.setOnClickListener(v -> {
+            finish(); // closes current activity and returns to previous
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        });
+
+    }
+
+    private void showImagePicker() {
+        String[] images = {"Auditorium", "Meeting Room", "Surau", "Court", "Gym", "Lab", "Lecture Room"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select Facility Image");
+        builder.setItems(images, (dialog, which) -> {
+            switch (which) {
+                case 0:
+                    imagePreview.setImageResource(R.drawable.f1);
+                    selectedImageName = "f1.jpg";
+                    break;
+                case 1:
+                    imagePreview.setImageResource(R.drawable.f2);
+                    selectedImageName = "f2.jpg";
+                    break;
+                case 2:
+                    imagePreview.setImageResource(R.drawable.f3);
+                    selectedImageName = "f3.jpg";
+                    break;
+                case 3:
+                    imagePreview.setImageResource(R.drawable.f4);
+                    selectedImageName = "f4.jpg";
+                    break;
+                case 4:
+                    imagePreview.setImageResource(R.drawable.f5);
+                    selectedImageName = "f5.jpg";
+                    break;
+                case 5:
+                    imagePreview.setImageResource(R.drawable.f6);
+                    selectedImageName = "f6.jpg";
+                    break;
+                case 6:
+                    imagePreview.setImageResource(R.drawable.f7);
+                    selectedImageName = "f7.jpg";
+                    break;
+            }
+        });
+        builder.show();
+    }
+
+    public void addNewFacility(View v) {
+        String name = txtName.getText().toString().trim();
+        String location = txtLoca.getText().toString().trim();
+        String status = txtStatus.getText().toString().trim();
+        String type = txtType.getText().toString().trim();
+        String capacityStr = txtCapacity.getText().toString().trim();
+
+        if (name.isEmpty() || location.isEmpty() || status.isEmpty() || type.isEmpty() || capacityStr.isEmpty()) {
+            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int capacityInt = 0;
+        try {
+            capacityInt = Integer.parseInt(capacityStr);
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Please enter a valid number for capacity", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
+        User user = spm.getUser();
+
+        if (user == null || user.getToken() == null || user.getToken().isEmpty()) {
+            Toast.makeText(this, "Please login first", Toast.LENGTH_SHORT).show();
+            clearSessionAndRedirect();
+            return;
+        }
+
+        // Add "Bearer " prefix for the token
+        String authHeader = user.getToken();
+
+        FacilityService facilityService = ApiUtils.getFacilityService();
+        Call<Facility> call = facilityService.addFacility(
+                authHeader,  // Use Bearer token format
+                name,
+                location,
+                selectedImageName,
+                status,
+                type,
+                capacityInt
+        );
+
+        call.enqueue(new Callback<Facility>() {
+            @Override
+            public void onResponse(Call<Facility> call, Response<Facility> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(),
+                            "Facility added successfully",
+                            Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    // Log the error for debugging
+                    Log.e("AddFacility", "Failed. Code: " + response.code());
+                    Toast.makeText(getApplicationContext(),
+                            "Failed to add facility (Code: " + response.code() + ")",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Facility> call, Throwable t) {
+                Log.e("AddFacility", "Error: " + t.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        "Error: " + t.getMessage(),
+                        Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
+    private void clearSessionAndRedirect() {
+
+    }
 }

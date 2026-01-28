@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/facilityList"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,15 +20,14 @@
             android:src="@drawable/arrow_back"
             android:background="?attr/selectableItemBackgroundBorderless"
             app:tint="@android:color/white"
-            android:onClick=""
-            tools:ignore="OnClick" />
+            android:onClick="backToDashboard"/>
 
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="All Reservations"
+            android:text="All Facilities"
             android:layout_marginLeft="45dp"
             android:layout_centerVertical="true"
             android:textColor="@android:color/white"
@@ -43,9 +41,9 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvBookList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:id="@+id/rvFacilityList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -57,7 +55,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:contentDescription="Add New Book"
+        android:contentDescription="Add New Facility"
         android:onClick="floatingAddBookClicked"
         android:src="@drawable/baseline_add_24" />
 </RelativeLayout>

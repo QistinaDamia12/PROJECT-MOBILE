@@ -10,7 +10,7 @@ import com.example.facility_bookuitm.model.User;
 public class SharedPrefManager {
 
     //the constants
-    private static final String SHARED_PREF_NAME = "bookstoresharedpref";
+    private static final String SHARED_PREF_NAME = "facilitystoresharedpref";
     private static final String KEY_ID = "keyid";
     private static final String KEY_USERNAME = "keyusername";
     private static final String KEY_EMAIL = "keyemail";

@@ -1,0 +1,62 @@
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="#731972"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgFacility"  android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"/>
+
+        <TextView
+            android:id="@+id/txtFacilityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Dewan Kuliah 1"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="20dp"
+            android:text="Fakulti Sains Komputer"/>
+
+        <TextView
+            android:id="@+id/txtCapacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capacity: 40 Pax"
+            android:textColor="@color/white"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="20dp"
+            android:layout_marginTop="4dp"/>
+
+        <Button
+            android:id="@+id/btnBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="25dp"
+            android:background="@drawable/round_button"
+            android:text="Reserve Now" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

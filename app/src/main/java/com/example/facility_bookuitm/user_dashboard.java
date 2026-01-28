@@ -1,7 +1,9 @@
 package com.example.facility_bookuitm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,22 +11,41 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class user_dashboard  extends AppCompatActivity {
+public class user_dashboard extends AppCompatActivity {
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.user_dashboard);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.userDashboard), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        // Memastikan UI tidak bertindih dengan system bars
+        View dashboardView = findViewById(R.id.userDashboard);
+        if (dashboardView != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(dashboardView, (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            });
+        }
     }
 
+    /**
+     * Berfungsi apabila kad/butang 'Book Facility' ditekan
+     */
     public void reserveFacility(View view) {
+        Toast.makeText(this, "Opening Facilities List...", Toast.LENGTH_SHORT).show();
+        //Intent intent = new Intent(this, FacilityList.class);
+        //startActivity(intent);
     }
 
+    /**
+     * Berfungsi apabila kad/butang 'Profile/History' ditekan
+     */
     public void profilebtn(View view) {
+        Toast.makeText(this, "Opening Booking History...", Toast.LENGTH_SHORT).show();
+        // Memanggil HistoryActivity untuk melihat rekod tempahan
+        //Intent intent = new Intent(this, HistoryActivity.class);
+        //startActivity(intent);
     }
 }
