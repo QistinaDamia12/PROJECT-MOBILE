@@ -65,7 +65,8 @@
                 android:layout_height="match_parent"
                 android:background="#731972"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:onClick="bookFacility">
 
                 <ImageView
                     android:layout_width="40dp"
