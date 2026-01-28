@@ -13,9 +13,9 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.graphics.Insets;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,8 +36,7 @@ import retrofit2.Response;
 
 public class admin_list_facility extends AppCompatActivity {
 
-
-    private FacilityService bookService;
+    private FacilityService facilityService;
     private RecyclerView rvFacilityList;
     private FacilityAdapter adapter;
 
@@ -70,26 +69,26 @@ public class admin_list_facility extends AppCompatActivity {
 
     private void updateRecyclerView() {
         // get user info from SharedPreferences to get token value
-        SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
+        SharedPrefManager spm = new SharedPrefManager(this);
         User user = spm.getUser();
         String token = user.getToken();
 
         // get book service instance
-        bookService = ApiUtils.getFacilityService();
+        facilityService = ApiUtils.getFacilityService();
 
         // execute the call. send the user token when sending the query
-        bookService.getAllFacility(token).enqueue(new Callback<List<Facility>>() {
+        facilityService.getAllBooks(token).enqueue(new Callback<List<Facility>>() {
             @Override
             public void onResponse(Call<List<Facility>> call, Response<List<Facility>> response) {
                 // for debug purpose
                 Log.d("MyApp:", "Response: " + response.raw().toString());
 
                 if (response.code() == 200) {
-                    // Get list of book object from response
-                    List<Facility> books = response.body();
+
+                    List<Facility> facilities= response.body();
 
                     // initialize adapter
-                    adapter = new FacilityAdapter(getApplicationContext(), books);
+                    adapter = new FacilityAdapter(getApplicationContext(), facilities);
 
                     // set adapter to the RecyclerView
                     rvFacilityList.setAdapter(adapter);
@@ -124,16 +123,16 @@ public class admin_list_facility extends AppCompatActivity {
 
     /**
      * Delete book record. Called by contextual menu "Delete"
-     * @param selectedBook - book selected by user
+     * @param selectedFacility - book selected by user
      */
-    private void doDeleteBook(Facility selectedBook) {
+    private void doDeleteBook(Facility selectedFacility) {
         // get user info from SharedPreferences
         SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
         User user = spm.getUser();
 
         // prepare REST API call
         FacilityService facilityService = ApiUtils.getFacilityService();
-        Call<DeleteResponse> call = bookService.deleteFacility(user.getToken(), selectedBook.getFacilityID());
+        Call<DeleteResponse> call = facilityService.deleteFacility(user.getToken(), selectedFacility.getFacilityID());
 
         // execute the call
         call.enqueue(new Callback<DeleteResponse>() {
@@ -141,7 +140,7 @@ public class admin_list_facility extends AppCompatActivity {
             public void onResponse(Call<DeleteResponse> call, Response<DeleteResponse> response) {
                 if (response.code() == 200) {
                     // 200 means OK
-                    displayAlert("Book successfully deleted");
+                    displayAlert("Facility successfully deleted");
                     // update data in list view
                     updateRecyclerView();
                 }
@@ -210,7 +209,7 @@ public class admin_list_facility extends AppCompatActivity {
 
         if (item.getItemId() == R.id.menu_details) {
             // user clicked details contextual menu
-
+            //doViewDetails(selectedFacility);
         }
         else if (item.getItemId() == R.id.menu_delete) {
             // user clicked the delete contextual menu
@@ -220,13 +219,20 @@ public class admin_list_facility extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
+//    private void doViewDetails(Facility selectedFacility) {
+//        Log.d("MyApp:", "viewing details: " + selectedFacility.toString());
+//        // forward user to BookDetailsActivity, passing the selected book id
+//        Intent intent = new Intent(getApplicationContext(), BookDetailsActivity.class);
+//        intent.putExtra("book_id", selectedFacility.getFacilityID());
+//        startActivity(intent);
+//    }
 
     /**
      * Action handler for Add Book floating action button
      * @param view
      */
     public void floatingAddBookClicked(View view) {
-        // forward user to NewBookActivity
+        // forward user to new
         Intent intent = new Intent(getApplicationContext(), admin_add_facility.class);
         startActivity(intent);
     }

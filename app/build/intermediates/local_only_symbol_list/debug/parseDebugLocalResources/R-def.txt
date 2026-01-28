@@ -9,6 +9,7 @@ drawable add_faci
 drawable arrow_back
 drawable background2
 drawable background_admin
+drawable baseline_add_24
 drawable bg_login
 drawable bg_login2
 drawable button_tab_selector

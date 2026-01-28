@@ -20,7 +20,7 @@
             android:src="@drawable/arrow_back"
             android:background="?attr/selectableItemBackgroundBorderless"
             app:tint="@android:color/white"
-            android:onClick=""/>
+            android:onClick="backToDashboard"/>
 
 
 
@@ -42,8 +42,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFacilityList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -55,7 +55,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:contentDescription="Add New Book"
+        android:contentDescription="Add New Facility"
         android:onClick="floatingAddBookClicked"
         android:src="@drawable/baseline_add_24" />
 </RelativeLayout>

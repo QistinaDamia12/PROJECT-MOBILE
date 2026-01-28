@@ -1,7 +1,6 @@
 package com.example.facility_bookuitm.adapter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +16,58 @@ import java.util.List;
 
 public class FacilityAdapter extends RecyclerView.Adapter<FacilityAdapter.ViewHolder> {
 
-    /**
-     * Create ViewHolder class to bind list item view
-     */
+    private List<Facility> facilityListData;
+    private Context mContext;
+    private int currentPos = -1;
+
+    public FacilityAdapter(Context context, List<Facility> listData) {
+        this.facilityListData = listData;
+        this.mContext = context;
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.admin_list_design, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Facility f = facilityListData.get(position);
+
+        holder.tvName.setText(f.getFacilityName());
+        holder.tvStatus.setText(f.getFacilityStatus());
+        holder.tvLoca.setText(f.getFacilityLocation());
+        holder.tvType.setText(f.getFacilityType());
+        holder.tvCapacity.setText(f.getFacilityCapacity() + " People");
+
+        String imgName = f.getFacilityPicture();
+        if (imgName != null && !imgName.isEmpty()) {
+            if (imgName.contains(".")) {
+                imgName = imgName.substring(0, imgName.lastIndexOf("."));
+            }
+            int resID = mContext.getResources().getIdentifier(imgName, "drawable", mContext.getPackageName());
+            if (resID != 0) {
+                holder.imagePreview.setImageResource(resID);
+            } else {
+                holder.imagePreview.setImageResource(android.R.drawable.ic_menu_gallery);
+            }
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return facilityListData != null ? facilityListData.size() : 0;
+    }
+
+    public Facility getSelectedItem() {
+        if (currentPos >= 0 && currentPos < facilityListData.size()) {
+            return facilityListData.get(currentPos);
+        }
+        return null;
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
         public TextView tvStatus;
         public TextView tvName;
@@ -37,74 +85,13 @@ public class FacilityAdapter extends RecyclerView.Adapter<FacilityAdapter.ViewHo
             tvCapacity = itemView.findViewById(R.id.tvCapacity);
             imagePreview = itemView.findViewById(R.id.imagePreview);
 
-            itemView.setOnLongClickListener(this);  //register long click action to this viewholder instance
+            itemView.setOnLongClickListener(this);
         }
 
         @Override
         public boolean onLongClick(View v) {
-            currentPos = getAdapterPosition(); //key point, record the position here
+            currentPos = getAdapterPosition();
             return false;
         }
-    } // close ViewHolder class
-
-    //////////////////////////////////////////////////////////////////////
-    // adapter class definitions
-
-    private List<Facility> facilityListData;   // list of book objects
-    private Context mContext;       // activity context
-    private int currentPos;         // currently selected item (long press)
-
-    public FacilityAdapter(Context context, List<Facility> listData) {
-        facilityListData = listData;
-        mContext = context;
     }
-
-    private Context getmContext() {
-        return mContext;
-    }
-
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater inflater = LayoutInflater.from(context);
-        // Inflate layout using the single item layout
-        View view = inflater.inflate(R.layout.admin_list_design, parent, false);
-        // Return a new holder instance
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        // bind data to the view holder instance
-        Facility f = facilityListData.get(position);
-        String img = f.getFacilityPicture();
-        if (img != null && !img.isEmpty()) {
-            holder.imagePreview.setImageURI(Uri.parse(img));
-        }
-
-        holder.tvName.setText(f.getFacilityName());
-        holder.tvStatus.setText(f.getFacilityStatus());
-        holder.tvLoca.setText(f.getFacilityLocation());
-        holder.tvType.setText(f.getFacilityType());
-        holder.tvCapacity.setText(String.valueOf(f.getFacilityCapacity()));
-    }
-
-    @Override
-    public int getItemCount() {
-        return facilityListData.size();
-    }
-
-    /**
-     * return book object for currently selected book (index already set by long press in viewholder)
-     * @return
-     */
-    public Facility getSelectedItem() {
-        // return the book record if the current selected position/index is valid
-        if(currentPos>=0 && facilityListData !=null && currentPos<facilityListData.size()) {
-            return facilityListData.get(currentPos);
-        }
-        return null;
-    }
-
 }

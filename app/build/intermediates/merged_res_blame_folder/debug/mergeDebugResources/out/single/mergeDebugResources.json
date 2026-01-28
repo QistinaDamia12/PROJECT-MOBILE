@@ -40,6 +40,10 @@
         "source": "com.example.facility_bookuitm.app-main-40:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
+        "merged": "com.example.facility_bookuitm.app-debug-38:/drawable_baseline_add_24.xml.flat",
+        "source": "com.example.facility_bookuitm.app-main-40:/drawable/baseline_add_24.xml"
+    },
+    {
         "merged": "com.example.facility_bookuitm.app-debug-38:/menu_options_menu.xml.flat",
         "source": "com.example.facility_bookuitm.app-main-40:/menu/options_menu.xml"
     },

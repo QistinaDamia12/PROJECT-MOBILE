@@ -14,8 +14,11 @@ import retrofit2.http.Path;
 
 public interface FacilityService {
 
+
     @GET("facilities")
-    Call<List<Facility>> getAllFacility(@Header("Authorization") String token);
+    Call<List<Facility>> getAllBooks(@Header("api-key") String api_key);
+    @GET("facilities/{facilityID}")
+    Call<Facility> getFacility(@Header("api-key") String api_key, @Path("id") int id);
 
     @FormUrlEncoded
     @POST("facilities")
@@ -30,8 +33,6 @@ public interface FacilityService {
     );
 
     @DELETE("facilities/{facilityID}")
-    Call<DeleteResponse> deleteFacility(
-            @Header("Authorization") String token,
-            @Path("facilityID") int facilityID
-    );
+    Call<DeleteResponse> deleteFacility(@Header ("api-key") String apiKey, @Path("id") int id);
+
 }
