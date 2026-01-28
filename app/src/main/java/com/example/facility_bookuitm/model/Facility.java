@@ -11,6 +11,19 @@ public class Facility
     private int facilityCapacity;
     private String userID;
 
+    public Facility() {
+    }
+
+    public Facility(int facilityID, String facilityName, String facilityLocation, String facilityPicture, String facilityStatus, String facilityType, int facilityCapacity) {
+        this.facilityID = facilityID;
+        this.facilityName = facilityName;
+        this.facilityLocation = facilityLocation;
+        this.facilityPicture = facilityPicture;
+        this.facilityStatus = facilityStatus;
+        this.facilityType = facilityType;
+        this.facilityCapacity = facilityCapacity;
+    }
+
     public int getFacilityID() {
         return facilityID;
     }
@@ -73,5 +86,17 @@ public class Facility
 
     public void setUserID(String userID) {
         this.userID = userID;
+    }
+
+    public String toString() {
+        return "Facility{" +
+                "facilityID=" + facilityID +
+                ", facilityName='" + facilityName + '\'' +
+                ", facilityLocation='" + facilityLocation + '\'' +
+                ", facilityType='" + facilityType + '\'' +
+                ", facilityStatus='" + facilityStatus + '\'' +
+                ", facilityCapacity='" + facilityCapacity + '\'' +
+                ", facilityPicture='" + facilityPicture + '\'' +
+                '}';
     }
 }

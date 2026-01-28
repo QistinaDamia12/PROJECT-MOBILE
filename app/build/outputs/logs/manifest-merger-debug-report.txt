@@ -112,12 +112,12 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\da
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:9:9-65
 	android:usesCleartextTraffic
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:15:9-44
-activity#com.example.facility_bookuitm.loginPage
+activity#com.example.facility_bookuitm.admin_add_facility
 ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:18:9-20:40
 	android:exported
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:19:13-38
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:19:13-47
 activity#com.example.facility_bookuitm.admin_dashboard
 ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:22:9-24:40
 	android:exported
@@ -136,12 +136,12 @@ ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\Andr
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:31:13-43
-activity#com.example.facility_bookuitm.admin_add_facility
+activity#com.example.facility_bookuitm.loginPage
 ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:34:9-43:20
 	android:exported
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:36:13-36
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:35:13-47
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:35:13-38
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:39:13-42:29
 action#android.intent.action.MAIN

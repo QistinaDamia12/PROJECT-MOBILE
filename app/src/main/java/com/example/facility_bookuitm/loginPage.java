@@ -78,21 +78,20 @@ public class loginPage extends AppCompatActivity {
      * @param password password
      */
     private void doLogin(String username, String password) {
-
         UserService userService = ApiUtils.getUserService();
-
-        // email login
         Call<User> call = userService.login(username, password);
 
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-
                 if (response.isSuccessful()) {
-
                     User user = response.body();
 
                     if (user != null && user.getToken() != null) {
+                        // ADD THIS: Log the token to see its format
+                        Log.d("MyApp", "=== LOGIN SUCCESSFUL ===");
+                        Log.d("MyApp", "Token received: " + user.getToken());
+                        Log.d("MyApp", "Token length: " + user.getToken().length());
 
                         Toast.makeText(loginPage.this, "Login successful", Toast.LENGTH_LONG).show();
 
@@ -115,18 +114,17 @@ public class loginPage extends AppCompatActivity {
                             startActivity(new Intent(loginPage.this, admin_dashboard.class));
                             finish();
                         } else {
-                            // User = Student/Lecturer
                             startActivity(new Intent(loginPage.this, user_dashboard.class));
                             finish();
                         }
-
                     } else {
+                        Log.e("MyApp", "Token is null!");
                         Toast.makeText(loginPage.this, "Login error", Toast.LENGTH_LONG).show();
                     }
-
                 } else {
                     try {
                         String errorResp = response.errorBody().string();
+                        Log.e("MyApp", "Login error: " + errorResp);
                         FailLogin fail = new Gson().fromJson(errorResp, FailLogin.class);
                         Toast.makeText(loginPage.this, fail.getError().getMessage(), Toast.LENGTH_LONG).show();
                     } catch (Exception e) {
