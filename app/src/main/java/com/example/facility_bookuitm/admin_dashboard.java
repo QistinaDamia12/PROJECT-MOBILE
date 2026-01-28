@@ -23,14 +23,25 @@ public class admin_dashboard  extends AppCompatActivity {
         });
     }
 
+    // Put this inside admin_dashboard.java
     public void facilityList(View view) {
-        finish();
-        // forward to Login Page
         Intent intent = new Intent(this, admin_list_facility.class);
         startActivity(intent);
     }
 
     public void requestList(View view) {
 
+    }
+    // In admin_dashboard.java
+    public void logout(View view) {
+        // Clear session
+        com.example.facility_bookuitm.sharedpref.SharedPrefManager spm =
+                new com.example.facility_bookuitm.sharedpref.SharedPrefManager(getApplicationContext());
+        spm.logout();
+
+        // Close app and go to login
+        finish();
+        Intent intent = new Intent(this, loginPage.class);
+        startActivity(intent);
     }
 }

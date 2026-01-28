@@ -26,7 +26,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class loginPage extends AppCompatActivity {
+public class
+loginPage extends AppCompatActivity {
 
     private EditText edtUsername;
     private EditText edtPassword;

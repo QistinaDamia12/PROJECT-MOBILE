@@ -31,6 +31,15 @@
         android:theme="@style/Theme.Facility_bookuitm"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.facility_bookuitm.UserListHistory"
+            android:exported="false" />
+        <activity
+            android:name="com.example.facility_bookuitm.AdminRequestList"
+            android:exported="false" />
+        <activity
+            android:name="com.example.facility_bookuitm.AdminRegister"
+            android:exported="false" />
+        <activity
             android:name="com.example.facility_bookuitm.admin_add_facility"
             android:exported="false" />
         <activity
@@ -51,6 +60,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.facility_bookuitm.user_list_facility" />
 
         <meta-data
             android:name="com.google.gms.fitness.sdk.version"

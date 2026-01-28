@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:background="#E8C6FF">
+        android:background="#781D4E">
 
         <!-- Facility Image -->
         <ImageView
@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="AD001"
-                    android:textColor="#541389"
+                    android:textColor="#ffff"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:fontFamily="@font/jersey_regular" />
@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Auditorium"
-                android:textColor="#3E1566"
+                android:textColor="#ffff"
                 android:textSize="16sp"
                 android:fontFamily="@font/jersey_regular" />
 
@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bangunan Kuliah, Level 6"
-                android:textColor="#3E1566"
+                android:textColor="#ffff"
                 android:textSize="16sp"
                 android:fontFamily="@font/jersey_regular" />
 
@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="20 People"
-                android:textColor="#3E1566"
+                android:textColor="#ffff"
                 android:textSize="16sp"
                 android:fontFamily="@font/jersey_regular" />
 

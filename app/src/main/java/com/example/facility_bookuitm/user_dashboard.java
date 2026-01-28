@@ -34,9 +34,11 @@ public class user_dashboard extends AppCompatActivity {
      * Berfungsi apabila kad/butang 'Book Facility' ditekan
      */
     public void reserveFacility(View view) {
-        Toast.makeText(this, "Opening Facilities List...", Toast.LENGTH_SHORT).show();
-        //Intent intent = new Intent(this, FacilityList.class);
-        //startActivity(intent);
+        // 1. Create the Intent to go to the correct page (user_list_facility)
+        Intent intent = new Intent(this, user_list_facility.class);
+
+        // 2. Start the activity
+        startActivity(intent);
     }
 
     /**

@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
+            android:text="Profile Settings"
             android:layout_marginLeft="45dp"
             android:layout_centerVertical="true"
             android:textColor="@android:color/white"
@@ -73,40 +73,47 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <TextView
+        <EditText
+            android:id="@+id/etCurrentPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email: student@uitm.edu.my"
+            android:hint="Current Password"
+            android:inputType="textPassword"
             android:padding="15dp"
             android:background="#F5F5F5"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black" />
 
-        <TextView
+        <EditText
+            android:id="@+id/etNewPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Faculty: Computer Science"
+            android:hint="New Password"
+            android:inputType="textPassword"
             android:padding="15dp"
             android:background="#F5F5F5"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/btnEdit"
+            android:id="@+id/btnChangePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="#6B0B83"
             android:fontFamily="@font/jersey_regular"
-            android:textSize="20dp"
-            android:text="Edit profile"
+            android:textSize="20sp"
+            android:text="Change Password"
             android:textColor="@android:color/white" />
+
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#6B0B83"
             android:fontFamily="@font/jersey_regular"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:text="Logout"
             android:textColor="@android:color/white" />
 
