@@ -122,48 +122,6 @@ public class admin_list_facility extends AppCompatActivity {
         });
     }
 
-    /**
-     * Delete book record. Called by contextual menu "Delete"
-     * @param selectedBook - book selected by user
-     */
-    private void doDeleteBook(Facility selectedBook) {
-        // get user info from SharedPreferences
-        SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
-        User user = spm.getUser();
-
-        // prepare REST API call
-        FacilityService facilityService = ApiUtils.getFacilityService();
-        Call<DeleteResponse> call = bookService.deleteFacility(user.getToken(), selectedBook.getFacilityID());
-
-        // execute the call
-        call.enqueue(new Callback<DeleteResponse>() {
-            @Override
-            public void onResponse(Call<DeleteResponse> call, Response<DeleteResponse> response) {
-                if (response.code() == 200) {
-                    // 200 means OK
-                    displayAlert("Book successfully deleted");
-                    // update data in list view
-                    updateRecyclerView();
-                }
-                else if (response.code() == 401) {
-                    // invalid token, ask user to relogin
-                    Toast.makeText(getApplicationContext(), "Invalid session. Please login again", Toast.LENGTH_LONG).show();
-                    clearSessionAndRedirect();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Error: " + response.message(), Toast.LENGTH_LONG).show();
-                    // server return other error
-                    Log.e("MyApp: ", response.toString());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<DeleteResponse> call, Throwable t) {
-                displayAlert("Error [" + t.getMessage() + "]");
-                Log.e("MyApp:", t.getMessage());
-            }
-        });
-    }
 
     /**
      * Displaying an alert dialog with a single button
@@ -208,8 +166,8 @@ public class admin_list_facility extends AppCompatActivity {
         Facility selectedFacility = adapter.getSelectedItem();
         Log.d("MyApp", "selected "+selectedFacility.toString());    // debug purpose
 
-        if (item.getItemId() == R.id.menu_details) {
-            // user clicked details contextual menu
+        if (item.getItemId() == R.id.menu_update) {
+            doUpdateBook(selectedFacility);
 
         }
         else if (item.getItemId() == R.id.menu_delete) {
@@ -220,13 +178,62 @@ public class admin_list_facility extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
+    /**
+     * Delete book record. Called by contextual menu "Delete"
+     * @param selectedBook - book selected by user
+     */
+    private void doDeleteBook(Facility selectedBook) {
+        // get user info from SharedPreferences
+        SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
+        User user = spm.getUser();
+
+        // prepare REST API call
+        FacilityService facilityService = ApiUtils.getFacilityService();
+        Call<DeleteResponse> call = bookService.deleteFacility(user.getToken(), selectedBook.getFacilityID());
+
+        // execute the call
+        call.enqueue(new Callback<DeleteResponse>() {
+            @Override
+            public void onResponse(Call<DeleteResponse> call, Response<DeleteResponse> response) {
+                if (response.code() == 200) {
+                    // 200 means OK
+                    displayAlert("Book successfully deleted");
+                    // update data in list view
+                    updateRecyclerView();
+                }
+                else if (response.code() == 401) {
+                    // invalid token, ask user to relogin
+                    Toast.makeText(getApplicationContext(), "Invalid session. Please login again", Toast.LENGTH_LONG).show();
+                    clearSessionAndRedirect();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Error: " + response.message(), Toast.LENGTH_LONG).show();
+                    // server return other error
+                    Log.e("MyApp: ", response.toString());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DeleteResponse> call, Throwable t) {
+                displayAlert("Error [" + t.getMessage() + "]");
+                Log.e("MyApp:", t.getMessage());
+            }
+        });
+    }
+
+    private void doUpdateBook(Facility selectedFacility)
+    {
+
+    }
+
+
 
     /**
      * Action handler for Add Book floating action button
      * @param view
      */
     public void floatingAddBookClicked(View view) {
-        // forward user to NewBookActivity
+
         Intent intent = new Intent(getApplicationContext(), admin_add_facility.class);
         startActivity(intent);
     }

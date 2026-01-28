@@ -18,7 +18,6 @@ import com.example.facility_bookuitm.sharedpref.SharedPrefManager;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
 public class admin_update_facility extends AppCompatActivity {
 
     private EditText txtName, txtLoca, txtStatus, txtType, txtCapacity;
@@ -33,6 +32,7 @@ public class admin_update_facility extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_update_facility);
 
+        // bind views
         imagePreview = findViewById(R.id.imagePreview);
         txtName = findViewById(R.id.txtName);
         txtLoca = findViewById(R.id.txtLoca);
@@ -41,33 +41,31 @@ public class admin_update_facility extends AppCompatActivity {
         txtCapacity = findViewById(R.id.txtCapacity);
         btnSubmit = findViewById(R.id.btnSubmit);
 
-        // 🔹 Get data from intent
+        // get intent data
         facilityID = getIntent().getIntExtra("facilityID", 0);
         txtName.setText(getIntent().getStringExtra("facilityName"));
         txtLoca.setText(getIntent().getStringExtra("facilityLocation"));
         txtStatus.setText(getIntent().getStringExtra("facilityStatus"));
         txtType.setText(getIntent().getStringExtra("facilityType"));
-        txtCapacity.setText(String.valueOf(
-                getIntent().getIntExtra("facilityCapacity", 0)
-        ));
-
+        txtCapacity.setText(String.valueOf(getIntent().getIntExtra("facilityCapacity", 0)));
         selectedImageName = getIntent().getStringExtra("facilityPicture");
 
-        // 🔹 Load image
+        // load image if exists
         if (selectedImageName != null) {
             String img = selectedImageName.replace(".jpg", "");
             int resID = getResources().getIdentifier(img, "drawable", getPackageName());
             if (resID != 0) imagePreview.setImageResource(resID);
         }
 
+        // 🔹 Attach submit button
         btnSubmit.setOnClickListener(v -> updateFacility());
 
-        // Back button
+        // back button
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
     }
 
+    // ✅ Place your updateFacility() function **here**, after onCreate() but inside the class
     private void updateFacility() {
-
         SharedPrefManager spm = new SharedPrefManager(this);
         User user = spm.getUser();
 
@@ -78,14 +76,15 @@ public class admin_update_facility extends AppCompatActivity {
 
         FacilityService service = ApiUtils.getFacilityService();
 
-        Call<Facility> call = service.addFacility(
-                user.getToken(), // using same API (simple)
-                txtName.getText().toString(),
-                txtLoca.getText().toString(),
+        Call<Facility> call = service.updateFacility(
+                user.getToken(),
+                facilityID,
+                txtName.getText().toString().trim(),
+                txtLoca.getText().toString().trim(),
                 selectedImageName,
-                txtStatus.getText().toString(),
-                txtType.getText().toString(),
-                Integer.parseInt(txtCapacity.getText().toString())
+                txtStatus.getText().toString().trim(),
+                txtType.getText().toString().trim(),
+                Integer.parseInt(txtCapacity.getText().toString().trim())
         );
 
         call.enqueue(new Callback<Facility>() {
@@ -95,19 +94,23 @@ public class admin_update_facility extends AppCompatActivity {
                     Toast.makeText(admin_update_facility.this,
                             "Facility updated successfully",
                             Toast.LENGTH_SHORT).show();
-                    finish();
+                    finish(); // go back to previous activity
+                } else if (response.code() == 401) {
+                    Toast.makeText(admin_update_facility.this,
+                            "Invalid session. Please login again",
+                            Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(admin_update_facility.this,
-                            "Update failed",
-                            Toast.LENGTH_SHORT).show();
+                            "Update failed: " + response.message(),
+                            Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Facility> call, Throwable t) {
                 Toast.makeText(admin_update_facility.this,
-                        t.getMessage(),
-                        Toast.LENGTH_SHORT).show();
+                        "Error: " + t.getMessage(),
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
