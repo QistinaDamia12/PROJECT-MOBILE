@@ -85,7 +85,7 @@ id llft
 id loginPage
 id menuBar
 id menu_delete
-id menu_details
+id menu_update
 id previewDetails
 id previewFacilityName
 id profile
@@ -117,6 +117,7 @@ layout admin_add_facility
 layout admin_dashboard
 layout admin_list_design
 layout admin_list_facility
+layout admin_update_facility
 layout login_page
 layout user_dashboard
 layout user_list_history_design

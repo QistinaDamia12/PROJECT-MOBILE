@@ -70,7 +70,7 @@ public class FacilityAdapter extends RecyclerView.Adapter<FacilityAdapter.ViewHo
         holder.tvType.setText(f.getFacilityType());
         holder.tvCapacity.setText(f.getFacilityCapacity() + " People");
 
-        // Simple local resource loader for images like "f1.jpg" if they are in drawable
+        // gambo
         String imgName = f.getFacilityPicture();
         if (imgName != null && !imgName.isEmpty()) {
             // Remove extension if present (e.g., "f1.jpg" -> "f1")

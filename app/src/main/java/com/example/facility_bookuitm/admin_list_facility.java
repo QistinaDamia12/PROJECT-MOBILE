@@ -120,6 +120,67 @@ public class admin_list_facility extends AppCompatActivity {
         });
     }
 
+    public void displayAlert(String message) {
+        new AlertDialog.Builder(this)
+                .setMessage(message)
+                .setCancelable(false)
+                .setPositiveButton("OK", (dialog, id) -> dialog.cancel())
+                .create()
+                .show();
+    }
+
+    public void clearSessionAndRedirect() {
+        SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
+        spm.logout();
+        finish();
+        startActivity(new Intent(this, loginPage.class));
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.facility_context_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        Facility selectedFacility = adapter.getSelectedItem();
+
+        if (selectedFacility == null) return super.onContextItemSelected(item);
+
+        if (item.getItemId() == R.id.menu_update) {
+            doUpdate(selectedFacility);
+        }
+
+        if (item.getItemId() == R.id.menu_delete) {
+            doDeleteBook(selectedFacility);
+        }
+
+        return super.onContextItemSelected(item);
+    }
+
+    private void doUpdate(Facility selectedFacility) {
+
+        if (selectedFacility == null) {
+            Toast.makeText(this, "No facility selected", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Intent intent = new Intent(this, admin_update_facility.class);
+
+        // Pass data to update page
+        intent.putExtra("facilityID", selectedFacility.getFacilityID());
+        intent.putExtra("facilityName", selectedFacility.getFacilityName());
+        intent.putExtra("facilityLocation", selectedFacility.getFacilityLocation());
+        intent.putExtra("facilityStatus", selectedFacility.getFacilityStatus());
+        intent.putExtra("facilityType", selectedFacility.getFacilityType());
+        intent.putExtra("facilityCapacity", selectedFacility.getFacilityCapacity());
+        intent.putExtra("facilityPicture", selectedFacility.getFacilityPicture());
+
+        startActivity(intent);
+    }
+
+
     private void doDeleteBook(Facility selectedFacility) {
         SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
         User user = spm.getUser();
@@ -152,40 +213,6 @@ public class admin_list_facility extends AppCompatActivity {
                 });
     }
 
-    public void displayAlert(String message) {
-        new AlertDialog.Builder(this)
-                .setMessage(message)
-                .setCancelable(false)
-                .setPositiveButton("OK", (dialog, id) -> dialog.cancel())
-                .create()
-                .show();
-    }
-
-    public void clearSessionAndRedirect() {
-        SharedPrefManager spm = new SharedPrefManager(getApplicationContext());
-        spm.logout();
-        finish();
-        startActivity(new Intent(this, loginPage.class));
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.facility_context_menu, menu);
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        Facility selectedFacility = adapter.getSelectedItem();
-
-        if (selectedFacility == null) return super.onContextItemSelected(item);
-
-        if (item.getItemId() == R.id.menu_delete) {
-            doDeleteBook(selectedFacility);
-        }
-
-        return super.onContextItemSelected(item);
-    }
 
     public void floatingAddBookClicked(View view) {
         startActivity(new Intent(getApplicationContext(), admin_add_facility.class));

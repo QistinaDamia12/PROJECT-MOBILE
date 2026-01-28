@@ -4053,7 +4053,7 @@ int id material_value_index 0x7f0a014c
 int id matrix 0x7f0a014d
 int id menuBar 0x7f0a014e
 int id menu_delete 0x7f0a014f
-int id menu_details 0x7f0a0150
+int id menu_update 0x7f0a0267
 int id message 0x7f0a0151
 int id middle 0x7f0a0152
 int id mini 0x7f0a0153
@@ -4450,6 +4450,7 @@ int layout admin_add_facility 0x7f0d001c
 int layout admin_dashboard 0x7f0d001d
 int layout admin_list_design 0x7f0d001e
 int layout admin_list_facility 0x7f0d001f
+int layout admin_update_facility 0x7f0d007c
 int layout custom_dialog 0x7f0d0020
 int layout design_bottom_navigation_item 0x7f0d0021
 int layout design_bottom_sheet_dialog 0x7f0d0022
