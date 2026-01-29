@@ -3895,7 +3895,6 @@ int id custom 0x7f0a00ab
 int id customPanel 0x7f0a00ac
 int id cut 0x7f0a00ad
 int id dark 0x7f0a00ae
-int id dateCard 0x7f0a00af
 int id date_picker_actions 0x7f0a00b0
 int id decelerate 0x7f0a00b1
 int id decelerateAndComplete 0x7f0a00b2
@@ -4023,11 +4022,6 @@ int id line3 0x7f0a012b
 int id linear 0x7f0a012c
 int id listMode 0x7f0a012d
 int id list_item 0x7f0a012e
-int id llfc 0x7f0a012f
-int id llfl 0x7f0a0130
-int id llfn 0x7f0a0131
-int id llfs 0x7f0a0132
-int id llft 0x7f0a0133
 int id loginPage 0x7f0a0134
 int id m3_side_sheet 0x7f0a0135
 int id marquee 0x7f0a0136
@@ -4162,7 +4156,6 @@ int id rbLecturer 0x7f0a01b6
 int id rbStudent 0x7f0a01b7
 int id rectangles 0x7f0a01b8
 int id recyclerViewHistory 0x7f0a01b9
-int id relativeLayout 0x7f0a01bb
 int id report_drawn 0x7f0a01bc
 int id reservationFacilityList 0x7f0a01bd
 int id retreat 0x7f0a01be
@@ -4172,6 +4165,7 @@ int id right 0x7f0a01c1
 int id rightToLeft 0x7f0a01c2
 int id right_icon 0x7f0a01c3
 int id right_side 0x7f0a01c4
+int id rootLayout 0x7f0a026d
 int id rounded 0x7f0a01c5
 int id row_index_key 0x7f0a01c6
 int id rvFacilityList 0x7f0a01c7
@@ -4272,7 +4266,6 @@ int id textinput_prefix_text 0x7f0a0225
 int id textinput_suffix_text 0x7f0a0226
 int id tilUserId 0x7f0a0227
 int id time 0x7f0a0228
-int id timeCard 0x7f0a0229
 int id title 0x7f0a022a
 int id titleDividerNoCustom 0x7f0a022b
 int id title_template 0x7f0a022c

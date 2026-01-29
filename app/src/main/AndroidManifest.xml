@@ -27,6 +27,9 @@
             android:name=".admin_add_facility"
             android:exported="false" />
         <activity
+            android:name=".admin_update_facility"
+            android:exported="false" />
+        <activity
             android:name=".user_add_reservation"
             android:exported="false" />
         <activity
@@ -47,7 +50,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".user_list_facility" />
+        <activity android:name=".user_reservationfacility_list" />
     </application>
 
 </manifest>

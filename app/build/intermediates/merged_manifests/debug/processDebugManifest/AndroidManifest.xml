@@ -43,6 +43,9 @@
             android:name="com.example.facility_bookuitm.admin_add_facility"
             android:exported="false" />
         <activity
+            android:name="com.example.facility_bookuitm.admin_update_facility"
+            android:exported="false" />
+        <activity
             android:name="com.example.facility_bookuitm.user_add_reservation"
             android:exported="false" />
         <activity
@@ -63,7 +66,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.facility_bookuitm.user_list_facility" />
+        <activity android:name="com.example.facility_bookuitm.user_reservationfacility_list" />
 
         <meta-data
             android:name="com.google.gms.fitness.sdk.version"

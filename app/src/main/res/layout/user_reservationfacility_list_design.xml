@@ -122,7 +122,8 @@
                 android:text="Reserve Now"
                 android:textAllCaps="false"
                 android:textSize="20sp"
-                app:cornerRadius="12dp" />
+                app:cornerRadius="12dp"
+                android:onClick="btnBookClicked"/>
 
         </LinearLayout>
     </LinearLayout>

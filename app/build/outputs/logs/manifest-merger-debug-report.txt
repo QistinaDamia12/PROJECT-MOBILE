@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:2:1-53:12
+ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:2:1-56:12
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\damio\.gradle\caches\8.13\transforms\3f188f316e45f051f4e1e06665993ab5\transformed\material-1.13.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\damio\.gradle\caches\8.13\transforms\96f19dca4c3f1cac04c06e038c77d7f4\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\damio\.gradle\caches\8.13\transforms\6e4848deab98c9632fffbbb86b6c4a09\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
@@ -64,8 +64,8 @@ ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\Andr
 	android:name
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:7:5-51:19
-INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:7:5-51:19
+ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:7:5-54:19
+INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:7:5-54:19
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\damio\.gradle\caches\8.13\transforms\3f188f316e45f051f4e1e06665993ab5\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\damio\.gradle\caches\8.13\transforms\3f188f316e45f051f4e1e06665993ab5\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\damio\.gradle\caches\8.13\transforms\96f19dca4c3f1cac04c06e038c77d7f4\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -136,50 +136,56 @@ ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\Andr
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:13-37
 	android:name
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:27:13-47
-activity#com.example.facility_bookuitm.user_add_reservation
+activity#com.example.facility_bookuitm.admin_update_facility
 ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:29:9-31:40
 	android:exported
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:30:13-49
-activity#com.example.facility_bookuitm.admin_dashboard
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:30:13-50
+activity#com.example.facility_bookuitm.user_add_reservation
 ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:32:9-34:40
 	android:exported
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:34:13-37
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:33:13-44
-activity#com.example.facility_bookuitm.admin_list_facility
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:33:13-49
+activity#com.example.facility_bookuitm.admin_dashboard
 ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:35:9-37:40
 	android:exported
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:36:13-48
-activity#com.example.facility_bookuitm.user_dashboard
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:36:13-44
+activity#com.example.facility_bookuitm.admin_list_facility
 ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:38:9-40:40
 	android:exported
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:40:13-37
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:39:13-43
-activity#com.example.facility_bookuitm.loginPage
-ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:41:9-49:20
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:39:13-48
+activity#com.example.facility_bookuitm.user_dashboard
+ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:41:9-43:40
 	android:exported
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:43:13-36
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:42:13-38
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:42:13-43
+activity#com.example.facility_bookuitm.loginPage
+ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:44:9-52:20
+	android:exported
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:46:13-36
+	android:name
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:45:13-38
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:44:13-48:29
+ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:47:13-51:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:45:17-69
+ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:48:17-69
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:45:25-66
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:47:17-77
+ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:50:17-77
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:47:27-74
-activity#com.example.facility_bookuitm.user_list_facility
-ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:50:9-56
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:50:27-74
+activity#com.example.facility_bookuitm.user_reservationfacility_list
+ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:53:9-67
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:50:19-53
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:53:19-64
 uses-sdk
 INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml

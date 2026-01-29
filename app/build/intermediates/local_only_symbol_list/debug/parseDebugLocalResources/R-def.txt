@@ -62,7 +62,6 @@ id btnSubmit
 id btnUploadImage
 id cardBook
 id confirmImage
-id dateCard
 id edtPassword
 id edtUsername
 id etCurrentPassword
@@ -81,11 +80,6 @@ id historyFacilityName
 id historyStatus
 id historyTime
 id imagePreview
-id llfc
-id llfl
-id llfn
-id llfs
-id llft
 id loginPage
 id menuBar
 id menu_delete
@@ -97,13 +91,12 @@ id profilePicture
 id rbLecturer
 id rbStudent
 id recyclerViewHistory
-id relativeLayout
 id reservationFacilityList
 id rgUserType
+id rootLayout
 id rvFacilityList
 id rvReserveFacility
 id tilUserId
-id timeCard
 id topBar
 id tvCapacity
 id tvDate

@@ -35,7 +35,7 @@ public class user_dashboard extends AppCompatActivity {
      */
     public void reserveFacility(View view) {
         // 1. Create the Intent to go to the correct page (user_list_facility)
-        Intent intent = new Intent(this, user_list_facility.class);
+        Intent intent = new Intent(this, user_reservationfacility_list.class);
 
         // 2. Start the activity
         startActivity(intent);
@@ -53,7 +53,7 @@ public class user_dashboard extends AppCompatActivity {
     public void bookFacility(View view) {
         finish();
         // forward to Login Page
-        Intent intent = new Intent(this, user_list_facility.class);
+        Intent intent = new Intent(this, user_reservationfacility_list.class);
         startActivity(intent);
     }
 }

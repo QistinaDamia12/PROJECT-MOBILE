@@ -205,19 +205,26 @@ public class admin_list_facility extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         Facility selectedFacility = adapter.getSelectedItem();
-        Log.d("MyApp", "selected "+selectedFacility.toString());    // debug purpose
+        Log.d("MyApp", "selected "+selectedFacility.toString()); // debug
 
         if (item.getItemId() == R.id.menu_update) {
-            // user clicked details contextual menu
-            //doViewDetails(selectedFacility);
-        }
-        else if (item.getItemId() == R.id.menu_delete) {
-            // user clicked the delete contextual menu
+            // ✅ Pass all facility data to the update activity
+            Intent intent = new Intent(getApplicationContext(), admin_update_facility.class);
+            intent.putExtra("facilityID", selectedFacility.getFacilityID());
+            intent.putExtra("facilityName", selectedFacility.getFacilityName());
+            intent.putExtra("facilityLocation", selectedFacility.getFacilityLocation());
+            intent.putExtra("facilityStatus", selectedFacility.getFacilityStatus());
+            intent.putExtra("facilityType", selectedFacility.getFacilityType());
+            intent.putExtra("facilityCapacity", selectedFacility.getFacilityCapacity());
+            intent.putExtra("facilityPicture", selectedFacility.getFacilityPicture());
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.menu_delete) {
             doDeleteBook(selectedFacility);
         }
 
         return super.onContextItemSelected(item);
     }
+
 
 
     /**

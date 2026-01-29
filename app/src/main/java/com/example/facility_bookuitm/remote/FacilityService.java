@@ -4,6 +4,7 @@ import com.example.facility_bookuitm.model.Facility;
 import com.example.facility_bookuitm.model.DeleteResponse;
 import java.util.List;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -15,7 +16,6 @@ import retrofit2.http.Path;
 
 public interface FacilityService {
 
-    // Try with "api-key" instead of "Authorization"
     @GET("facilities")
     Call<List<Facility>> getAllFacility(@Header("api-key") String token);
 
@@ -43,17 +43,12 @@ public interface FacilityService {
             @Path("facilityID") int facilityID
     );
 
-    @FormUrlEncoded
+
     @PUT("facilities/{facilityID}")
-    Call<Facility> updateFacility(
-            @Header("Authorization") String token,
+    Call<Void> updateFacility(
+            @Header("api-key") String token,
             @Path("facilityID") int facilityID,
-            @Field("facilityName") String facilityName,
-            @Field("facilityLocation") String facilityLocation,
-            @Field("facilityPicture") String facilityPicture,
-            @Field("facilityStatus") String facilityStatus,
-            @Field("facilityType") String facilityType,
-            @Field("facilityCapacity") int facilityCapacity
+            @Body Facility facility
     );
 
 }
