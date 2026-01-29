@@ -29,6 +29,7 @@ drawable facici
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable logout
+drawable me1
 drawable outline_add_24
 drawable round_button
 drawable rounded_edittext
@@ -61,7 +62,6 @@ id btnRequestList
 id btnSubmit
 id btnUploadImage
 id cardBook
-id confirmImage
 id edtPassword
 id edtUsername
 id etCurrentPassword
@@ -71,10 +71,7 @@ id etPassword
 id etPurpose
 id etUserId
 id fab
-id facilityCapacity
 id facilityList
-id facilityLocation
-id facilityType
 id historyDate
 id historyFacilityName
 id historyStatus
@@ -87,7 +84,6 @@ id menu_update
 id previewDetails
 id previewFacilityName
 id profile
-id profilePicture
 id rbLecturer
 id rbStudent
 id recyclerViewHistory
@@ -100,6 +96,7 @@ id tilUserId
 id topBar
 id tvCapacity
 id tvDate
+id tvEmail
 id tvFacilityName
 id tvLoca
 id tvName
@@ -107,6 +104,7 @@ id tvRequesterName
 id tvStatus
 id tvTime
 id tvType
+id tvUsername
 id txtCapacity
 id txtLoca
 id txtName
@@ -116,8 +114,6 @@ id txtStatus
 id txtSuccessDetail
 id txtType
 id userDashboard
-id userID
-id userName
 layout admin_add_facility
 layout admin_dashboard
 layout admin_list_design

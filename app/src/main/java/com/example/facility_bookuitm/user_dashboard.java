@@ -46,8 +46,8 @@ public class user_dashboard extends AppCompatActivity {
      */
     public void profilebtn(View view) {
         Toast.makeText(this, "Opening Booking Profile...", Toast.LENGTH_SHORT).show();
-        //Intent intent = new Intent(this, user_.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, user_profile.class);
+        startActivity(intent);
     }
 
     public void bookFacility(View view) {

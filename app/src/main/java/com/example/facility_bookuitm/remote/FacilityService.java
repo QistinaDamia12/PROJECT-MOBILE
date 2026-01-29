@@ -20,7 +20,7 @@ public interface FacilityService {
     Call<List<Facility>> getAllFacility(@Header("api-key") String token);
 
     @GET("facilities/{facilityID}")
-    Call<Facility> getFacility(
+    Call<Facility> getFacilityById(
             @Header("api-key") String token,
             @Path("facilityID") int facilityID
     );
@@ -51,4 +51,4 @@ public interface FacilityService {
             @Body Facility facility
     );
 
-}
+ }

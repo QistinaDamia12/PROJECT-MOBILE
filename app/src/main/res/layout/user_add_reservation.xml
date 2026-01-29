@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F2F2F2">
+    android:background="#F2F2F2"
+    android:paddingBottom="16dp">
 
     <!-- TOP BAR -->
     <RelativeLayout
@@ -27,91 +28,103 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="45dp"
+            android:layout_marginStart="50dp"
             android:text="UiTM Facilities"
             android:textColor="@android:color/white"
             android:fontFamily="@font/jersey_regular"
-            android:textSize="30sp" />
+            android:textStyle="bold"
+            android:textSize="28sp" />
     </RelativeLayout>
 
-    <!-- TITLE -->
-    <LinearLayout
+    <!-- PAGE TITLE -->
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="55dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:text="Let's start your reservation"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="35sp" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Let's start your reservation"
+        android:textColor="#333333"
+        android:fontFamily="@font/jersey_regular"
+        android:textStyle="bold"
+        android:textSize="28sp" />
 
     <!-- FACILITY CARD -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="275dp"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="350dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            app:cardCornerRadius="15dp">
-
-            <ImageView
-                android:id="@+id/confirmImage"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <TextView
-            android:id="@+id/facilityType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Dewan Kuliah 1"
-            android:textColor="#333333"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/facilityLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fakulti Sains Komputer"
-            android:textColor="#666666"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/facilityCapacity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Capacity: 40 Pax"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <!-- FORM -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- DATE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp">
+
+            <ImageView
+                android:id="@+id/imagePreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="#FAFAFA"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="AD001"
+            android:textColor="#333333"
+            android:fontFamily="@font/jersey_regular"
+            android:textStyle="bold"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auditorium"
+            android:textColor="#666666"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="25sp"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/tvLoca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fakulti Sains Komputer"
+            android:textColor="#666666"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="25sp"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/tvCapacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40 People"
+            android:textColor="#444444"
+            android:fontFamily="@font/jersey_regular"
+            android:textSize="25sp"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- FORM SECTION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- DATE PICKER -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp"
-            android:layout_marginBottom="12dp"
             app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
@@ -119,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="10dp"
+                android:padding="12dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground">
@@ -129,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:text="Booking Date"
                     android:textColor="#888888"
-                    android:textSize="14sp" />
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:id="@+id/txtSelectedDate"
@@ -137,19 +150,19 @@
                     android:layout_height="wrap_content"
                     android:text="Select Date"
                     android:textColor="#000000"
-                    android:textSize="20sp"
                     android:textStyle="bold"
-                    android:layout_marginTop="4dp" />
+                    android:textSize="20sp"
+                    android:layout_marginTop="4dp"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- TIME -->
+        <!-- TIME PICKER -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp"
-            android:layout_marginBottom="12dp"
             app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
@@ -157,7 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="10dp"
+                android:padding="12dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground">
@@ -167,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:text="Booking Time"
                     android:textColor="#888888"
-                    android:textSize="14sp" />
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:id="@+id/txtSelectedTime"
@@ -175,9 +188,9 @@
                     android:layout_height="wrap_content"
                     android:text="Select Time"
                     android:textColor="#000000"
-                    android:textSize="20sp"
                     android:textStyle="bold"
-                    android:layout_marginTop="4dp" />
+                    android:textSize="20sp"
+                    android:layout_marginTop="4dp"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -193,14 +206,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="12dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Purpose of Reservation"
                     android:textColor="#888888"
-                    android:textSize="14sp" />
+                    android:textSize="15sp"/>
 
                 <EditText
                     android:id="@+id/etPurpose"
@@ -209,14 +222,14 @@
                     android:hint="e.g. Club Meeting, Futsal Match"
                     android:background="@android:color/transparent"
                     android:textColor="#000000"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:layout_marginTop="4dp"
-                    android:inputType="textCapSentences" />
+                    android:inputType="textCapSentences"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
-    <!-- SUBMIT -->
+    <!-- SUBMIT BUTTON -->
     <Button
         android:id="@+id/btnNextToConfirm"
         android:layout_width="match_parent"
@@ -224,9 +237,10 @@
         android:layout_margin="16dp"
         android:text="Request Reservation"
         android:textAllCaps="false"
-        android:textSize="18sp"
+        android:textSize="25sp"
         android:textColor="@android:color/white"
         android:backgroundTint="#6B0B83"
-        app:cornerRadius="30dp" />
-
+        android:fontFamily="@font/jersey_regular"
+        app:cornerRadius="30dp"/>
 </LinearLayout>
+

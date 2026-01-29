@@ -96,13 +96,13 @@
                 android:layout_height="match_parent"
                 android:background="#731972"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:onClick="profilebtn">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/contact_support"
-                    android:onClick="profilebtn"/>
+                    android:src="@drawable/contact_support" />
 
                 <TextView
                     android:layout_width="wrap_content"

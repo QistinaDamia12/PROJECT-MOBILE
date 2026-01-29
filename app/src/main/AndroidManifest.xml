@@ -38,9 +38,19 @@
         <activity
             android:name=".admin_list_facility"
             android:exported="false" />
+
+
+        <activity
+            android:name=".user_add_reservation"
+            android:exported="false" />
         <activity
             android:name=".user_dashboard"
             android:exported="false" />
+        <activity
+            android:name=".user_profile"
+            android:exported="false" />
+
+
         <activity
             android:name=".loginPage"
             android:exported="true">

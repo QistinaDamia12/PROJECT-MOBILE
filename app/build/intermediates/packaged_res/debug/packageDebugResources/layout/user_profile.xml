@@ -1,122 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background2">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#6B0B83"
-        android:padding="10dp">
-
-        <ImageView
-            android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/arrow_back"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:tint="@android:color/white" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile Settings"
-            android:layout_marginLeft="45dp"
-            android:layout_centerVertical="true"
-            android:textColor="@android:color/white"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="30sp" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="30dp">
-
-        <ImageView
-            android:id="@+id/profilePicture"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@android:drawable/sym_def_app_icon"
-            android:background="@android:color/darker_gray"
-            android:scaleType="centerCrop" />
-
-        <TextView
-            android:id="@+id/userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Student Name"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="40dp"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/userID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Student ID: 2024123456"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="20dp"
-            android:textColor="@color/black"  />
-    </LinearLayout>
+    android:background="@drawable/background2"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingBottom="30dp">
 
-        <EditText
-            android:id="@+id/etCurrentPassword"
+        <!-- HEADER -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#6B0B83"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow_back"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile Settings"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/btnBack"
+                android:layout_marginStart="20dp"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/jersey_regular"/>
+        </RelativeLayout>
+
+        <!-- USER INFO -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Current Password"
-            android:inputType="textPassword"
-            android:padding="15dp"
-            android:background="#F5F5F5"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/black" />
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:layout_margin="20dp"
+            android:padding="20dp"
+            android:elevation="4dp">
 
-        <EditText
-            android:id="@+id/etNewPassword"
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome User!"
+                android:textSize="26sp"
+                android:textColor="#222222"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/jersey_regular"/>
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: user@example.com"
+                android:textSize="18sp"
+                android:textColor="#555555"
+                android:fontFamily="@font/jersey_regular"/>
+        </LinearLayout>
+
+        <!-- FORM -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="New Password"
-            android:inputType="textPassword"
-            android:padding="15dp"
-            android:background="#F5F5F5"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/black"/>
-
-        <Button
-            android:id="@+id/btnChangePassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#6B0B83"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="20sp"
-            android:text="Change Password"
-            android:textColor="@android:color/white" />
-
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="10dp"
-            android:backgroundTint="#6B0B83"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="20sp"
-            android:text="Logout"
-            android:textColor="@android:color/white" />
+            android:padding="20dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Password"
+                android:textSize="20sp"
+                android:textColor="#6B0B83"
+                android:textStyle="bold"
+                android:fontFamily="@font/jersey_regular"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/etCurrentPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Current Password"
+                android:padding="12dp"
+                android:background="#F5F5F5"
+                android:layout_marginBottom="12dp"
+                android:textColor="#222222"
+                android:textSize="16sp"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/etNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="New Password"
+                android:padding="12dp"
+                android:background="#F5F5F5"
+                android:layout_marginBottom="20dp"
+                android:textColor="#222222"
+                android:textSize="16sp"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btnChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Change Password"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#6B0B83"
+                android:textSize="18sp"
+                android:fontFamily="@font/jersey_regular"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Logout"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#6B0B83"
+                android:textSize="18sp"
+                android:fontFamily="@font/jersey_regular"/>
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
