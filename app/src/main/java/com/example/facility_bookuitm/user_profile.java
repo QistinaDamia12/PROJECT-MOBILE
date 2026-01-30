@@ -154,7 +154,7 @@ public class user_profile extends AppCompatActivity {
     private void logoutUser() {
         spm.logout();
         Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(user_profile.this, loginPage.class));
+        startActivity(new Intent(user_profile.this, LoginPage.class));
         finish();
     }
 }

@@ -1,59 +1,57 @@
 package com.example.facility_bookuitm.model;
 
-public class Reservation
-{
+import com.google.gson.annotations.SerializedName;
+
+public class Reservation {
+
+    @SerializedName("reserveID")
     private int reserveID;
+
+    @SerializedName("reserveDate")
     private String reserveDate;
+
+    @SerializedName("reserveTime")
     private String reserveTime;
+
+    @SerializedName("reservePurpose")
     private String reservePurpose;
-    private String userID;
+
+    @SerializedName("reserveStatus")
+    private String reserveStatus;
+
+    @SerializedName("id")
+    private int id;
+
+    @SerializedName("facilityID")
     private int facilityID;
 
-    public int getReserveID() {
-        return reserveID;
-    }
+    @SerializedName("facility")
+    private Facility facility;
 
-    public void setReserveID(int reserveID) {
-        this.reserveID = reserveID;
-    }
+    // Getters and Setters
+    public int getReserveID() { return reserveID; }
+    public void setReserveID(int reserveID) { this.reserveID = reserveID; }
 
-    public String getReserveDate() {
-        return reserveDate;
-    }
+    public String getReserveDate() { return reserveDate; }
+    public void setReserveDate(String reserveDate) { this.reserveDate = reserveDate; }
 
-    public void setReserveDate(String reserveDate) {
-        this.reserveDate = reserveDate;
-    }
+    public String getReserveTime() { return reserveTime; }
+    public void setReserveTime(String reserveTime) { this.reserveTime = reserveTime; }
 
-    public String getReserveTime() {
-        return reserveTime;
-    }
+    public String getReservePurpose() { return reservePurpose; }
+    public void setReservePurpose(String reservePurpose) { this.reservePurpose = reservePurpose; }
 
-    public void setReserveTime(String reserveTime) {
-        this.reserveTime = reserveTime;
-    }
+    public String getReserveStatus() { return reserveStatus; }
+    public void setReserveStatus(String reserveStatus) { this.reserveStatus = reserveStatus; }
 
-    public String getReservePurpose() {
-        return reservePurpose;
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public void setReservePurpose(String reservePurpose) {
-        this.reservePurpose = reservePurpose;
-    }
+    public int getFacilityID() { return facilityID; }
+    public void setFacilityID(int facilityID) { this.facilityID = facilityID; }
 
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
-    public int getFacilityID() {
-        return facilityID;
-    }
-
-    public void setFacilityID(int facilityID) {
-        this.facilityID = facilityID;
-    }
+    public Facility getFacility() { return facility; }
+    public void setFacility(Facility facility) { this.facility = facility; }
 }
+
+

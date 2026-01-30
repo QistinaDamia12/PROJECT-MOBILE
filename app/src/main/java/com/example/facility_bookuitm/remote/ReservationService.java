@@ -12,20 +12,24 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
-import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ReservationService {
 
+    // Get all reservations
     @GET("reservation")
     Call<List<Reservation>> getAllReservations(@Header("api-key") String token);
 
-    @GET("reservation/{reservationID}")
-    Call<Reservation> getReservation(
+    // Get reservations by user_id
+    @GET("reservations")
+    Call<List<Reservation>> getReservationsByUser(
             @Header("api-key") String token,
-            @Path("reservationID") int reservationID
+            @Query("user_id") int userId
     );
 
+
+    // Add a reservation
     @FormUrlEncoded
     @POST("reservation")
     Call<Reservation> addReservation(
@@ -33,28 +37,15 @@ public interface ReservationService {
             @Field("reserveDate") String reserveDate,
             @Field("reserveTime") String reserveTime,
             @Field("reservePurpose") String reservePurpose,
+            @Field("reserveStatus") String reserveStatus,
             @Field("facilityID") int facilityID,
-            @Field("userID") int userID
+            @Field("id") int userID
     );
 
+    // Delete a reservation
     @DELETE("reservation/{reservationID}")
     Call<DeleteResponse> deleteReservation(
             @Header("api-key") String token,
             @Path("reservationID") int reservationID
     );
-
-    @PUT("reservation/{reservationID}")
-    Call<Void> updateReservation(
-            @Header("api-key") String token,
-            @Path("reservationID") int reservationID,
-            @Field("reserveDate") String reserveDate,
-            @Field("reserveTime") String reserveTime,
-            @Field("reservePurpose") String reservePurpose,
-            @Field("facilityID") int facilityID,
-            @Field("userID") int userID
-    );
 }
-
-
-
-

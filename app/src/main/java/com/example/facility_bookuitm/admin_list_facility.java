@@ -28,6 +28,7 @@ import com.example.facility_bookuitm.remote.ApiUtils;
 import com.example.facility_bookuitm.remote.FacilityService;
 import com.example.facility_bookuitm.sharedpref.SharedPrefManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -58,65 +59,71 @@ public class admin_list_facility extends AppCompatActivity {
         registerForContextMenu(rvFacilityList);
 
         // fetch and update book list
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
         updateRecyclerView();
+
     }
 
     private void updateRecyclerView() {
         // get user info from SharedPreferences to get token value
         SharedPrefManager spm = new SharedPrefManager(this);
         User user = spm.getUser();
-        String token = user.getToken();
+        String token = user != null ? user.getToken() : "";
 
-        // get book service instance
+        // get facility service instance
         facilityService = ApiUtils.getFacilityService();
 
-        // execute the call. send the user token when sending the query
+        // execute the call
         facilityService.getAllFacility(token).enqueue(new Callback<List<Facility>>() {
             @Override
             public void onResponse(Call<List<Facility>> call, Response<List<Facility>> response) {
-                // for debug purpose
-                Log.d("MyApp:", "Response: " + response.raw().toString());
-
-                if (response.code() == 200) {
-
-                    List<Facility> facilities= response.body();
+                if (response.isSuccessful() && response.body() != null) {
+                    List<Facility> facilities = response.body();
 
                     // initialize adapter
                     adapter = new AdminFacilityAdapter(getApplicationContext(), facilities);
 
-                    // set adapter to the RecyclerView
+                    // set adapter to RecyclerView
                     rvFacilityList.setAdapter(adapter);
-
-                    // set layout to recycler view
                     rvFacilityList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-                    // add separator between item in the list
-                    DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvFacilityList.getContext(),
+                    // add separator between items
+                    DividerItemDecoration divider = new DividerItemDecoration(rvFacilityList.getContext(),
                             DividerItemDecoration.VERTICAL);
-                    rvFacilityList.addItemDecoration(dividerItemDecoration);
-                }
-                else if (response.code() == 401) {
-                    // invalid token, ask user to relogin
-                    Toast.makeText(getApplicationContext(), "Invalid session. Please login again", Toast.LENGTH_LONG).show();
-                    clearSessionAndRedirect();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Error: " + response.message(), Toast.LENGTH_LONG).show();
-                    // server return other error
-                    Log.e("MyApp: ", response.toString());
+                    rvFacilityList.addItemDecoration(divider);
+
+                } else {
+                    // API returned error (like 500)
+                    try {
+                        String errorBody = response.errorBody() != null ? response.errorBody().string() : "No details";
+                        Log.e("API_ERROR", "Error: " + response.code() + " Body: " + errorBody);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    // show toast to user
+                    Toast.makeText(getApplicationContext(),
+                            "Failed to load facilities. Please try again later.",
+                            Toast.LENGTH_LONG).show();
+
+                    // optional: show empty placeholder list
+                    adapter = new AdminFacilityAdapter(getApplicationContext(), new ArrayList<>());
+                    rvFacilityList.setAdapter(adapter);
+                    rvFacilityList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 }
             }
 
             @Override
             public void onFailure(Call<List<Facility>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Error connecting to the server", Toast.LENGTH_LONG).show();
-                Log.e("MyApp:", t.toString());
+                Log.e("API_ERROR", "Connection error: " + t.getMessage());
+
+                Toast.makeText(getApplicationContext(),
+                        "Error connecting to server. Please check your internet.",
+                        Toast.LENGTH_LONG).show();
+
+                // optional: show empty placeholder list
+                adapter = new AdminFacilityAdapter(getApplicationContext(), new ArrayList<>());
+                rvFacilityList.setAdapter(adapter);
+                rvFacilityList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
         });
     }
@@ -191,7 +198,7 @@ public class admin_list_facility extends AppCompatActivity {
         finish();
 
         // forward to Login Page
-        Intent intent = new Intent(this, loginPage.class);
+        Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
 
     }
@@ -209,7 +216,7 @@ public class admin_list_facility extends AppCompatActivity {
 
         if (item.getItemId() == R.id.menu_update) {
             // ✅ Pass all facility data to the update activity
-            Intent intent = new Intent(getApplicationContext(), admin_update_facility.class);
+            Intent intent = new Intent(getApplicationContext(), AdminUpdateFacility.class);
             intent.putExtra("facilityID", selectedFacility.getFacilityID());
             intent.putExtra("facilityName", selectedFacility.getFacilityName());
             intent.putExtra("facilityLocation", selectedFacility.getFacilityLocation());
@@ -231,9 +238,9 @@ public class admin_list_facility extends AppCompatActivity {
      * Action handler for Add Book floating action button
      * @param view
      */
-    public void floatingAddBookClicked(View view) {
+    public void floatingAddFacilityClicked(View view) {
         // forward user to new
-        Intent intent = new Intent(getApplicationContext(), admin_add_facility.class);
+        Intent intent = new Intent(getApplicationContext(), AdminAddFacility.class);
         startActivity(intent);
     }
 }

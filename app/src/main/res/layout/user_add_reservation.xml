@@ -62,7 +62,7 @@
             app:cardElevation="4dp">
 
             <ImageView
-                android:id="@+id/imagePreview"
+                android:id="@+id/imgFacility"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -70,7 +70,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/tvFacilityName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -81,7 +81,7 @@
             android:textSize="26sp" />
 
         <TextView
-            android:id="@+id/tvType"
+            android:id="@+id/tvFacilityType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Auditorium"
@@ -91,7 +91,7 @@
             android:layout_marginTop="2dp"/>
 
         <TextView
-            android:id="@+id/tvLoca"
+            android:id="@+id/tvFacilityLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fakulti Sains Komputer"
@@ -101,7 +101,7 @@
             android:layout_marginTop="2dp"/>
 
         <TextView
-            android:id="@+id/tvCapacity"
+            android:id="@+id/tvFacilityCapacity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="40 People"

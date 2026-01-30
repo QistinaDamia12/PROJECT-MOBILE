@@ -62,11 +62,10 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewHistory"
+        android:id="@+id/rvHistoryList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
-        android:clipToPadding="false"
-        tools:listitem="@layout/item_history_card"/>
+        android:clipToPadding="false" />
 
 </LinearLayout>

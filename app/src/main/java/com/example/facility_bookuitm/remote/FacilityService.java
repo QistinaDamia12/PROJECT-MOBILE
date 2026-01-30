@@ -2,7 +2,9 @@ package com.example.facility_bookuitm.remote;
 
 import com.example.facility_bookuitm.model.Facility;
 import com.example.facility_bookuitm.model.DeleteResponse;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -20,10 +22,7 @@ public interface FacilityService {
     Call<List<Facility>> getAllFacility(@Header("api-key") String token);
 
     @GET("facilities/{facilityID}")
-    Call<Facility> getFacilityById(
-            @Header("api-key") String token,
-            @Path("facilityID") int facilityID
-    );
+    Call<Facility> getFacility(@Header("api-key") String token, @Path("facilityID") int facilityID);
 
     @FormUrlEncoded
     @POST("facilities")
@@ -34,21 +33,18 @@ public interface FacilityService {
             @Field("facilityPicture") String facilityPicture,
             @Field("facilityStatus") String facilityStatus,
             @Field("facilityType") String facilityType,
-            @Field("facilityCapacity") int facilityCapacity
+            @Field("facilityCapacity") int facilityCapacity,
+            @Field("id") int userID
     );
+
+
 
     @DELETE("facilities/{facilityID}")
-    Call<DeleteResponse> deleteFacility(
-            @Header("api-key") String token,
-            @Path("facilityID") int facilityID
-    );
-
+    Call<DeleteResponse> deleteFacility(@Header("api-key") String token, @Path("facilityID") int facilityID);
 
     @PUT("facilities/{facilityID}")
-    Call<Void> updateFacility(
-            @Header("api-key") String token,
-            @Path("facilityID") int facilityID,
-            @Body Facility facility
-    );
+    Call<Void> updateFacility(@Header("api-key") String token, @Path("facilityID") int facilityID, @Body Facility facility);
 
- }
+}
+
+

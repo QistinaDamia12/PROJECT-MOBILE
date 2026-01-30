@@ -30,33 +30,22 @@
         android:testOnly="true"
         android:theme="@style/Theme.Facility_bookuitm"
         android:usesCleartextTraffic="true" >
-        <activity
-            android:name="com.example.facility_bookuitm.UserListHistory"
-            android:exported="false" />
-        <activity
-            android:name="com.example.facility_bookuitm.AdminRequestList"
-            android:exported="false" />
-        <activity
-            android:name="com.example.facility_bookuitm.AdminRegister"
-            android:exported="false" />
-        <activity
-            android:name="com.example.facility_bookuitm.admin_add_facility"
-            android:exported="false" />
-        <activity
-            android:name="com.example.facility_bookuitm.admin_update_facility"
-            android:exported="false" />
-        <activity
-            android:name="com.example.facility_bookuitm.user_add_reservation"
-            android:exported="false" />
+
+        <!-- Admin Activities -->
         <activity
             android:name="com.example.facility_bookuitm.admin_dashboard"
             android:exported="false" />
         <activity
-            android:name="com.example.facility_bookuitm.admin_list_facility"
+            android:name="com.example.facility_bookuitm.AdminAddFacility"
             android:exported="false" />
         <activity
-            android:name="com.example.facility_bookuitm.user_add_reservation"
+            android:name="com.example.facility_bookuitm.AdminUpdateFacility"
             android:exported="false" />
+        <activity
+            android:name="com.example.facility_bookuitm.admin_list_facility"
+            android:exported="false" />
+
+        <!-- User Activities -->
         <activity
             android:name="com.example.facility_bookuitm.user_dashboard"
             android:exported="false" />
@@ -64,7 +53,21 @@
             android:name="com.example.facility_bookuitm.user_profile"
             android:exported="false" />
         <activity
-            android:name="com.example.facility_bookuitm.loginPage"
+            android:name="com.example.facility_bookuitm.user_add_reservation"
+            android:exported="false" />
+        <activity
+            android:name="com.example.facility_bookuitm.user_reservationfacility_list"
+            android:exported="false" />
+        <activity
+            android:name="com.example.facility_bookuitm.UserListHistory"
+            android:exported="false" />
+        <activity
+            android:name="com.example.facility_bookuitm.UserReservationSuccessful"
+            android:exported="false" />
+
+        <!-- Login -->
+        <activity
+            android:name="com.example.facility_bookuitm.LoginPage"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,7 +75,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.facility_bookuitm.user_reservationfacility_list" />
 
         <meta-data
             android:name="com.google.gms.fitness.sdk.version"
@@ -87,6 +89,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.example.facility_bookuitm.com.squareup.picasso"
+            android:exported="false" />
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.facility_bookuitm.androidx-startup"

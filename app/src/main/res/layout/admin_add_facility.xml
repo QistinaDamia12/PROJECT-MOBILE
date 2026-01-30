@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F5F5F5"
-    tools:context=".admin_add_facility">
+    android:id="@+id/addFacility">
 
     <RelativeLayout
         android:layout_width="match_parent"

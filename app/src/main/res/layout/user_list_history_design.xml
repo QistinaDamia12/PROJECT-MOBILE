@@ -4,67 +4,100 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp">
+    android:layout_margin="10dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#E8C6FF"
-        android:padding="16dp">
+        android:padding="12dp"
+        android:background="#F3E5F5">
 
+        <!-- Facility Image -->
+        <ImageView
+            android:id="@+id/historyFacilityImage"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"/>
+
+        <!-- Facility Name + Status -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:id="@+id/historyFacilityName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/jersey_regular"
                 android:text="Futsal Court A"
-                android:textSize="25dp"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="#541389" />
+                android:textColor="#4A148C"
+                android:fontFamily="@font/jersey_regular" />
 
             <TextView
                 android:id="@+id/historyStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingHorizontal="10dp"
                 android:background="#FBFBFB"
-                android:padding="4dp"
-                android:text="CONFIRMED"
+                android:paddingVertical="4dp"
+                android:text="APPROVED"
                 android:textColor="#2E7D32"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
         </RelativeLayout>
 
+        <!-- Facility Type -->
+        <TextView
+            android:id="@+id/historyFacilityType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sports Facility"
+            android:textSize="16sp"
+            android:textColor="#6A1B9A"
+            android:layout_marginTop="4dp" />
+
+        <!-- Divider -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginVertical="8dp"
-            android:background="#5E35B1" />
+            android:background="#CE93D8" />
 
+        <!-- Reservation Date -->
         <TextView
             android:id="@+id/historyDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date: 12 Oct 2025"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="20dp"
-            android:textColor="#3E1566" />
+            android:text="📅 Date: 12 Oct 2025"
+            android:textSize="16sp"
+            android:textColor="#4A148C" />
 
+        <!-- Reservation Time -->
         <TextView
             android:id="@+id/historyTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time: 8:00 PM - 10:00 PM"
-            android:fontFamily="@font/jersey_regular"
-            android:textSize="20dp"
-            android:textColor="#3E1566" />
+            android:text="⏰ Time: 8:00 PM - 10:00 PM"
+            android:textSize="16sp"
+            android:textColor="#4A148C"
+            android:layout_marginTop="2dp" />
+
+        <!-- Reservation Purpose -->
+        <TextView
+            android:id="@+id/historyPurpose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎯 Purpose: Training Session"
+            android:textSize="16sp"
+            android:textColor="#4A148C"
+            android:layout_marginTop="4dp" />
 
     </LinearLayout>
+
 </com.google.android.material.card.MaterialCardView>

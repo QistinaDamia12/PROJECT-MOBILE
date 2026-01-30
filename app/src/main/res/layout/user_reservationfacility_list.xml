@@ -48,17 +48,18 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <Button
-            android:id="@+id/btnFacilities"
+            android:id="@+id/btnDashboard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginEnd="6dp"
-            android:text="Facilities"
+            android:text="Dashboard"
             android:textAllCaps="false"
             android:fontFamily="@font/jersey_regular"
             android:textSize="18sp"
             android:background="@drawable/button_tab_selector"
-            android:textColor="@color/tab_text_selector" />
+            android:textColor="@color/tab_text_selector"
+            android:onClick="btnDashboard"/>
 
 
         <Button
@@ -72,7 +73,8 @@
             android:fontFamily="@font/jersey_regular"
             android:textSize="18sp"
             android:background="@drawable/button_tab_selector"
-            android:textColor="@color/tab_text_selector" />
+            android:textColor="@color/tab_text_selector"
+            android:onClick="btnHistory"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

@@ -41,7 +41,7 @@ public class admin_dashboard  extends AppCompatActivity {
 
         // Close app and go to login
         finish();
-        Intent intent = new Intent(this, loginPage.class);
+        Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
     }
 }

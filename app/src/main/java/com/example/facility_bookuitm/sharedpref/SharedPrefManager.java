@@ -1,15 +1,13 @@
 package com.example.facility_bookuitm.sharedpref;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.example.facility_bookuitm.loginPage;
 import com.example.facility_bookuitm.model.User;
 
 public class SharedPrefManager {
 
-    //the constants
+    //the constants - unified to match the rest of the app
     private static final String SHARED_PREF_NAME = "facilitystoresharedpref";
     private static final String KEY_ID = "keyid";
     private static final String KEY_USERNAME = "keyusername";
@@ -40,13 +38,12 @@ public class SharedPrefManager {
     }
 
     /**
-     * this method will checker whether user is already logged in or not.
-     * return True if already logged in
+     * this method will check whether user is already logged in or not.
+     * return True if already logged in (based on token existence)
      */
-
     public boolean isLoggedIn() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(KEY_USERNAME, null) != null;
+        return sharedPreferences.getString(KEY_TOKEN, null) != null;
     }
 
     /**

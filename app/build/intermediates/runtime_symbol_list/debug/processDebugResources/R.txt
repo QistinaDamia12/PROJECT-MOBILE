@@ -3793,6 +3793,7 @@ int id action_text 0x7f0a0044
 int id actions 0x7f0a0045
 int id activity_chooser_view_content 0x7f0a0046
 int id add 0x7f0a0047
+int id addFacility 0x7f0a0271
 int id adjust_height 0x7f0a0048
 int id adjust_width 0x7f0a0049
 int id adminDashboard 0x7f0a004a
@@ -3839,8 +3840,7 @@ int id btnApproveQuick 0x7f0a0072
 int id btnBack 0x7f0a0073
 int id btnBook 0x7f0a0074
 int id btnChangePassword 0x7f0a0075
-int id btnDone 0x7f0a0076
-int id btnFacilities 0x7f0a0077
+int id btnDashboard 0x7f0a027b
 int id btnHistory 0x7f0a0078
 int id btnLogin 0x7f0a0079
 int id btnLogout 0x7f0a007a
@@ -3971,6 +3971,7 @@ int id frost 0x7f0a00fb
 int id fullscreen_header 0x7f0a00fc
 int id ghost_view 0x7f0a00fd
 int id ghost_view_holder 0x7f0a00fe
+int id glide_custom_view_target_tag 0x7f0a0272
 int id gone 0x7f0a00ff
 int id graph 0x7f0a0100
 int id graph_wrap 0x7f0a0101
@@ -3982,7 +3983,10 @@ int id hidden 0x7f0a0106
 int id hide_ime_id 0x7f0a0107
 int id hideable 0x7f0a0108
 int id historyDate 0x7f0a0109
+int id historyFacilityImage 0x7f0a0277
 int id historyFacilityName 0x7f0a010a
+int id historyFacilityType 0x7f0a0278
+int id historyPurpose 0x7f0a0279
 int id historyStatus 0x7f0a010b
 int id historyTime 0x7f0a010c
 int id home 0x7f0a010d
@@ -3998,6 +4002,7 @@ int id ignore 0x7f0a0116
 int id ignoreRequest 0x7f0a0117
 int id image 0x7f0a0118
 int id imagePreview 0x7f0a0119
+int id imgFacility 0x7f0a0273
 int id immediateStop 0x7f0a011a
 int id included 0x7f0a011b
 int id indeterminate 0x7f0a011c
@@ -4151,9 +4156,9 @@ int id ratio 0x7f0a01b5
 int id rbLecturer 0x7f0a01b6
 int id rbStudent 0x7f0a01b7
 int id rectangles 0x7f0a01b8
-int id recyclerViewHistory 0x7f0a01b9
 int id report_drawn 0x7f0a01bc
 int id reservationFacilityList 0x7f0a01bd
+int id reserveSuccess 0x7f0a027c
 int id retreat 0x7f0a01be
 int id reverseSawtooth 0x7f0a01bf
 int id rgUserType 0x7f0a01c0
@@ -4165,6 +4170,7 @@ int id rootLayout 0x7f0a026d
 int id rounded 0x7f0a01c5
 int id row_index_key 0x7f0a01c6
 int id rvFacilityList 0x7f0a01c7
+int id rvHistoryList 0x7f0a027a
 int id rvReserveFacility 0x7f0a01c8
 int id save_non_transition_alpha 0x7f0a01c9
 int id save_overlay_view 0x7f0a01ca
@@ -4285,7 +4291,10 @@ int id triangle 0x7f0a023d
 int id tvCapacity 0x7f0a023e
 int id tvDate 0x7f0a023f
 int id tvEmail 0x7f0a026f
+int id tvFacilityCapacity 0x7f0a0274
+int id tvFacilityLocation 0x7f0a0275
 int id tvFacilityName 0x7f0a0240
+int id tvFacilityType 0x7f0a0276
 int id tvLoca 0x7f0a0241
 int id tvName 0x7f0a0242
 int id tvRequesterName 0x7f0a0243

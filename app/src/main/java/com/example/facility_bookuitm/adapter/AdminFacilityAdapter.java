@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.facility_bookuitm.R;
 import com.example.facility_bookuitm.model.Facility;
 
@@ -18,11 +19,55 @@ public class AdminFacilityAdapter extends RecyclerView.Adapter<AdminFacilityAdap
 
     private List<Facility> facilityListData;
     private Context mContext;
-    private int currentPos = -1;
+    private int currentPos = -1; // selected item position
 
     public AdminFacilityAdapter(Context context, List<Facility> listData) {
-        this.facilityListData = listData;
         this.mContext = context;
+        this.facilityListData = listData;
+    }
+
+    // Get currently selected facility (optional)
+    public Facility getSelectedItem() {
+        if (currentPos >= 0 && facilityListData != null && currentPos < facilityListData.size()) {
+            return facilityListData.get(currentPos);
+        }
+        return null;
+    }
+
+    public void updateFacility(Facility updatedFacility) {
+        if (facilityListData == null || updatedFacility == null) return;
+
+        for (int i = 0; i < facilityListData.size(); i++) {
+            Facility f = facilityListData.get(i);
+            if (f.getFacilityID() == updatedFacility.getFacilityID()) { // match by ID
+                facilityListData.set(i, updatedFacility);
+                notifyItemChanged(i); // refresh only this item
+                break;
+            }
+        }
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
+        ImageView imagePreview;
+        TextView tvName, tvStatus, tvLoca, tvType, tvCapacity;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvStatus = itemView.findViewById(R.id.tvStatus);
+            tvLoca = itemView.findViewById(R.id.tvLoca);
+            tvType = itemView.findViewById(R.id.tvType);
+            tvCapacity = itemView.findViewById(R.id.tvCapacity);
+            imagePreview = itemView.findViewById(R.id.imagePreview);
+
+            itemView.setOnLongClickListener(this);
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            currentPos = getAdapterPosition();
+            return false;
+        }
     }
 
     @Override
@@ -50,73 +95,43 @@ public class AdminFacilityAdapter extends RecyclerView.Adapter<AdminFacilityAdap
                 holder.tvStatus.setTextColor(
                         mContext.getResources().getColor(android.R.color.holo_red_dark)
                 );
-            }
-            else if (status.equalsIgnoreCase("AVAILABLE")) {
+            } else if (status.equalsIgnoreCase("AVAILABLE")) {
                 holder.tvStatus.setTextColor(
                         mContext.getResources().getColor(android.R.color.holo_green_dark)
                 );
-            }
-            else {
+            } else {
                 holder.tvStatus.setTextColor(
                         mContext.getResources().getColor(android.R.color.darker_gray)
                 );
             }
         }
 
-        // ===== IMAGE LOADING =====
+        // ===== IMAGE LOADING WITH GLIDE =====
         String imgName = f.getFacilityPicture();
+        int resID = 0;
+
         if (imgName != null && !imgName.isEmpty()) {
             if (imgName.contains(".")) {
                 imgName = imgName.substring(0, imgName.lastIndexOf("."));
             }
-            int resID = mContext.getResources()
+            resID = mContext.getResources()
                     .getIdentifier(imgName, "drawable", mContext.getPackageName());
+        }
 
-            if (resID != 0) {
-                holder.imagePreview.setImageResource(resID);
-            } else {
-                holder.imagePreview.setImageResource(android.R.drawable.ic_menu_gallery);
-            }
+        // Load with Glide to ensure update
+        if (resID != 0) {
+            Glide.with(mContext)
+                    .load(resID)
+                    .placeholder(android.R.drawable.ic_menu_gallery)
+                    .into(holder.imagePreview);
+        } else {
+            holder.imagePreview.setImageResource(android.R.drawable.ic_menu_gallery);
         }
     }
-
 
     @Override
     public int getItemCount() {
         return facilityListData != null ? facilityListData.size() : 0;
     }
-
-    public Facility getSelectedItem() {
-        if (currentPos >= 0 && currentPos < facilityListData.size()) {
-            return facilityListData.get(currentPos);
-        }
-        return null;
-    }
-
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
-        public TextView tvStatus;
-        public TextView tvName;
-        public TextView tvLoca;
-        public TextView tvType;
-        public TextView tvCapacity;
-        public ImageView imagePreview;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            tvStatus = itemView.findViewById(R.id.tvStatus);
-            tvName = itemView.findViewById(R.id.tvName);
-            tvLoca = itemView.findViewById(R.id.tvLoca);
-            tvType = itemView.findViewById(R.id.tvType);
-            tvCapacity = itemView.findViewById(R.id.tvCapacity);
-            imagePreview = itemView.findViewById(R.id.imagePreview);
-
-            itemView.setOnLongClickListener(this);
-        }
-
-        @Override
-        public boolean onLongClick(View v) {
-            currentPos = getAdapterPosition();
-            return false;
-        }
-    }
 }
+

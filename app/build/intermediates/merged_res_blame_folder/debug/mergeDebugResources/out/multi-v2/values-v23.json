@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.facility_bookuitm.app-mergeDebugResources-36:/values-v23/values-v23.xml",
+            "outputFile": "com.example.facility_bookuitm.app-mergeDebugResources-37:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\damio\\.gradle\\caches\\8.13\\transforms\\d1072c3e9cbc9a060d4f8230bedec944\\transformed\\appcompat-1.7.1\\res\\values-v23\\values-v23.xml",

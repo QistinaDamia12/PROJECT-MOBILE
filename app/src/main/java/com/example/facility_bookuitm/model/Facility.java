@@ -9,7 +9,8 @@ public class Facility
     private String facilityStatus;
     private String facilityType;
     private int facilityCapacity;
-    private String userID;
+
+    private User user;
 
     public Facility() {
     }
@@ -80,13 +81,15 @@ public class Facility
         this.facilityCapacity = facilityCapacity;
     }
 
-    public String getUserID() {
-        return userID;
+
+    public User getUser() {
+        return user;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUser(User user) {
+        this.user = user;
     }
+
 
     public String toString() {
         return "Facility{" +

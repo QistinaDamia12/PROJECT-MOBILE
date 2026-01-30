@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.facility_bookuitm.app-mergeDebugResources-36:/values-sr/values-sr.xml",
+            "outputFile": "com.example.facility_bookuitm.app-mergeDebugResources-37:/values-sr/values-sr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\damio\\.gradle\\caches\\8.13\\transforms\\12d752e131675837cf3339f6508f3f5c\\transformed\\play-services-basement-18.4.0\\res\\values-sr\\values.xml",
