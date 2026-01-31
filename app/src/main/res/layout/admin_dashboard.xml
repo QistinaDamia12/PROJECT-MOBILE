@@ -49,75 +49,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:background="@color/white"
-
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recent Request"
-            android:textSize="18sp"
+            android:text="Welcome User!"
+            android:textSize="40sp"
+            android:textColor="#222222"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@android:color/white">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/previewFacilityName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Auditorium"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#591339" />
-
-                <TextView
-                    android:id="@+id/previewDetails"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Date: 15/01/2026 | Time: 10:00 AM"
-                    android:textColor="#666666" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btnApproveQuick"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Approve"
-                        android:backgroundTint="#2E7D32"
-                        android:layout_marginRight="4dp" />
-
-                    <Button
-                        android:id="@+id/btnRejectQuick"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Reject"
-                        android:backgroundTint="#C62828"
-                        android:layout_marginLeft="4dp" />
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/jersey_regular"/>
 
         <Button
             android:id="@+id/btnRequestList"
@@ -137,7 +82,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="1dp">
+        android:padding="1dp"
+        android:layout_marginTop="50dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/adminFacilities"

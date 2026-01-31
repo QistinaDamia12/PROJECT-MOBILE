@@ -59,7 +59,7 @@
             android:name="com.example.facility_bookuitm.user_reservationfacility_list"
             android:exported="false" />
         <activity
-            android:name="com.example.facility_bookuitm.UserListHistory"
+            android:name="com.example.facility_bookuitm.ReservationHistoryActivity"
             android:exported="false" />
         <activity
             android:name="com.example.facility_bookuitm.UserReservationSuccessful"

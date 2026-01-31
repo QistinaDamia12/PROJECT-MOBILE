@@ -4,29 +4,31 @@ import com.google.gson.annotations.SerializedName;
 
 public class Reservation {
 
-    @SerializedName("reserveID")
+
     private int reserveID;
 
-    @SerializedName("reserveDate")
     private String reserveDate;
 
-    @SerializedName("reserveTime")
+
     private String reserveTime;
 
-    @SerializedName("reservePurpose")
+
     private String reservePurpose;
 
-    @SerializedName("reserveStatus")
+
     private String reserveStatus;
 
-    @SerializedName("id")
-    private int id;
 
-    @SerializedName("facilityID")
-    private int facilityID;
+    private int user_id;
 
-    @SerializedName("facility")
-    private Facility facility;
+
+    private int facility_id;
+
+//    @SerializedName("user")
+//    private User user;
+
+//    @SerializedName("facility")
+//    private Facility facility;
 
     // Getters and Setters
     public int getReserveID() { return reserveID; }
@@ -44,14 +46,33 @@ public class Reservation {
     public String getReserveStatus() { return reserveStatus; }
     public void setReserveStatus(String reserveStatus) { this.reserveStatus = reserveStatus; }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+//    public Facility getFacility() { return facility; }
+//
+//    public void setFacility(Facility facility) { this.facility = facility; }
 
-    public int getFacilityID() { return facilityID; }
-    public void setFacilityID(int facilityID) { this.facilityID = facilityID; }
+    public int getUser_id() {
+        return user_id;
+    }
 
-    public Facility getFacility() { return facility; }
-    public void setFacility(Facility facility) { this.facility = facility; }
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public int getFacility_id() {
+        return facility_id;
+    }
+
+    public void setFacility_id(int facility_id) {
+        this.facility_id = facility_id;
+    }
+
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 }
 
 

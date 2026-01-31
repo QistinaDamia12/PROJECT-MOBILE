@@ -26,7 +26,7 @@ public class UserReservationSuccessful  extends AppCompatActivity {
     public void btnHistory(View view) {
 
         finish();
-        Intent intent = new Intent(this, UserListHistory.class);
+        Intent intent = new Intent(this, ReservationHistoryActivity.class);
         startActivity(intent);
     }
     public void btnDashboard(View view) {

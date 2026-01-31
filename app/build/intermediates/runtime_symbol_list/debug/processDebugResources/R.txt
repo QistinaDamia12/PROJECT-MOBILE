@@ -3859,6 +3859,7 @@ int id cache_measures 0x7f0a0086
 int id callMeasure 0x7f0a0087
 int id cancel_button 0x7f0a0088
 int id cardBook 0x7f0a0089
+int id cardRequest 0x7f0a027d
 int id carryVelocity 0x7f0a008a
 int id center 0x7f0a008b
 int id centerCrop 0x7f0a008c
@@ -4148,6 +4149,7 @@ int id postLayout 0x7f0a01ac
 int id pressed 0x7f0a01ad
 int id previewDetails 0x7f0a01ae
 int id previewFacilityName 0x7f0a01af
+int id previewUsername 0x7f0a027e
 int id profile 0x7f0a01b0
 int id progress_circular 0x7f0a01b2
 int id progress_horizontal 0x7f0a01b3
@@ -4457,6 +4459,8 @@ int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
 int layout admin_add_facility 0x7f0d001c
+int layout admin_approve_design 0x7f0d0080
+int layout admin_approve_list 0x7f0d0081
 int layout admin_dashboard 0x7f0d001d
 int layout admin_list_design 0x7f0d001e
 int layout admin_list_facility 0x7f0d001f

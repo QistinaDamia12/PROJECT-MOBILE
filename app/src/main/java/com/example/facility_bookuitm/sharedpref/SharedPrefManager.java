@@ -3,6 +3,7 @@ package com.example.facility_bookuitm.sharedpref;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.facility_bookuitm.ReservationHistoryActivity;
 import com.example.facility_bookuitm.model.User;
 
 public class SharedPrefManager {
@@ -20,6 +21,7 @@ public class SharedPrefManager {
     public SharedPrefManager(Context context) {
         mCtx = context;
     }
+
 
     /**
      * method to let the user login

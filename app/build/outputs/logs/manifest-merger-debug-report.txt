@@ -166,12 +166,12 @@ ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\Andr
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:27:65-89
 	android:name
 		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:27:19-64
-activity#com.example.facility_bookuitm.UserListHistory
-ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:9-78
+activity#com.example.facility_bookuitm.ReservationHistoryActivity
+ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:9-89
 	android:exported
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:51-75
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:62-86
 	android:name
-		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:19-50
+		ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:19-61
 activity#com.example.facility_bookuitm.UserReservationSuccessful
 ADDED from C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:29:9-88
 	android:exported

@@ -25,7 +25,7 @@
         <activity android:name=".user_profile" android:exported="false" />
         <activity android:name=".user_add_reservation" android:exported="false" />
         <activity android:name=".user_reservationfacility_list" android:exported="false" />
-        <activity android:name=".UserListHistory" android:exported="false" />
+        <activity android:name=".ReservationHistoryActivity" android:exported="false" />
         <activity android:name=".UserReservationSuccessful" android:exported="false" />
 
         <!-- Login -->

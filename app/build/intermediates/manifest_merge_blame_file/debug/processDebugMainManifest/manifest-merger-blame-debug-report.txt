@@ -101,11 +101,11 @@
 60            android:exported="false" />
 60-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:27:65-89
 61        <activity
-61-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:9-78
-62            android:name="com.example.facility_bookuitm.UserListHistory"
-62-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:19-50
+61-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:9-89
+62            android:name="com.example.facility_bookuitm.ReservationHistoryActivity"
+62-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:19-61
 63            android:exported="false" />
-63-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:51-75
+63-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:28:62-86
 64        <activity
 64-->C:\Users\damio\AndroidStudioProjects\PROJECT-MOBILE\app\src\main\AndroidManifest.xml:29:9-88
 65            android:name="com.example.facility_bookuitm.UserReservationSuccessful"
